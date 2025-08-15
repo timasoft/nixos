@@ -3,6 +3,7 @@
 {
   home.stateVersion = "25.05";
   home.username = "tima";
+  home.homeDirectory = "/home/tima";
 
   home.packages = with pkgs; [ lazygit neovide ];
 

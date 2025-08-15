@@ -23,11 +23,11 @@
 	  home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.tima = {
-	    imports = [
-	      nixvim.homeManagerModules.nixvim
-	      ./home.nix
-	    ];
-	  };	
+	      imports = [
+	        nixvim.homeManagerModules.nixvim
+	        ./home.nix
+	      ];
+	  };
 	}
       ];
       specialArgs = {
@@ -41,7 +41,10 @@
       extraSpecialArgs = {
         unstable = unstablePkgs;
       };
-      modules = [ ./home.nix ];
+      modules = [
+        nixvim.homeManagerModules.nixvim
+        ./home.nix
+        ];
     };
   };
 }
