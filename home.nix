@@ -4,7 +4,7 @@
   home.stateVersion = "25.05";
   home.username = "tima";
 
-  home.packages = with pkgs; [ lazygit ];
+  home.packages = with pkgs; [ lazygit neovide ];
 
   imports = [
     ./home/nvim.nix
