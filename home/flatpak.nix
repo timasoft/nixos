@@ -1,24 +1,23 @@
 { config, pkgs, ... }:
 
 {
-  systemd.user.services.flatpak-update-all = {
-    description = "Flatpak: update all user apps";
-    path = [ pkgs.flatpak ];
+  systemd.user.services."flatpak-update-all" = {
     serviceConfig = {
       Type = "oneshot";
+      Description = "Flatpak: update all user apps";
       ExecStart = "${pkgs.flatpak}/bin/flatpak update -y --user";
     };
   };
 
-  systemd.user.timers.flatpak-update-all = {
-    description = "Timer: update user flatpaks daily";
+  systemd.user.timers."flatpak-update-all" = {
     timerConfig = {
       OnCalendar = "daily";
       RandomizedDelaySec = "1h";
-      Persistent = "true";
+      Persistent = true;
     };
     unitConfig = {
       Unit = "flatpak-update-all.service";
     };
   };
 }
+
