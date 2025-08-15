@@ -5,10 +5,11 @@
   home.username = "tima";
   home.homeDirectory = "/home/tima";
 
-  home.packages = with pkgs; [ lazygit neovide ];
+  home.packages = with pkgs; [ lazygit neovide flatpak ];
 
   imports = [
     ./home/nvim.nix
+    ./home/flatpak.nix
   ];
 
   programs.git = {

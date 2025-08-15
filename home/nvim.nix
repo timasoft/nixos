@@ -44,7 +44,6 @@
       vim.o.tabstop = 4
       vim.g.mapleader = ';'
 
-      pcall(function() require('mini.animate').setup() end)
       pcall(function() require('mini.starter').setup() end)
       pcall(function() require('mini.cursorword').setup() end)
       pcall(function() require('mini.fuzzy').setup() end)
