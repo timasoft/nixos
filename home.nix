@@ -4,7 +4,11 @@
   home.stateVersion = "25.05";
   home.username = "tima";
 
-  home.packages = with pkgs; [ neovim ];
+  # home.packages = with pkgs; [ ];
+
+  imports = [
+    ./home/nvim.nix
+  ];
 
   programs.git = {
     enable = true;
