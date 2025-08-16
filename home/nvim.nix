@@ -43,6 +43,7 @@
       vim.g.neovide_opacity = 0.95
       vim.g.neovide_normal_opacity = 0.95
       vim.g.neovide_scroll_animation_length = 0.1
+      vim.g.coc_global_extensions = { 'coc-discord-rpc' }
       vim.o.guifont = "Monocraft Nerd Font:h10"
 
       vim.opt.termguicolors = true

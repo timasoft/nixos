@@ -5,7 +5,7 @@
   home.username = "tima";
   home.homeDirectory = "/home/tima";
 
-  home.packages = with pkgs; [ lazygit neovide flatpak ];
+  home.packages = with pkgs; [ lazygit neovide flatpak nvtopPackages.nvidia ];
 
   imports = [
     ./home/nvim.nix
