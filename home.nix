@@ -10,6 +10,7 @@
   imports = [
     ./home/nvim.nix
     ./home/flatpak.nix
+    ./home/theme.nix
   ];
 
   programs.git = {
