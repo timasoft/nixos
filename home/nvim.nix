@@ -25,6 +25,15 @@
       nvim-colorizer-lua
       gitsigns-nvim
       coc-nvim
+      coc-css
+      coc-json
+      coc-html
+      coc-pyright
+      coc-rust-analyzer
+      coc-clangd
+      coc-tsserver
+      coc-yaml
+      coc-toml
       minimap-vim
     # ] ++ [
     #   (pkgs.vimPlugins."minimap.vim")
@@ -84,6 +93,11 @@
       end)
 
       pcall(function() require("barbecue.ui").toggle(true) end)
+
+      vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? coc#pum#next(1) : "<Tab>"', { noremap = true, expr = true })
+      vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? coc#pum#prev(1) : "<C-h>"', { noremap = true, expr = true })
+      vim.api.nvim_set_keymap('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"', { noremap = true, silent = true, expr = true })
+
 
       vim.keymap.set('n', '<Leader>m', MiniMap.toggle)
       vim.cmd('highlight Normal guibg=#050010')
