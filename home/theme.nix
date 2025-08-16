@@ -19,7 +19,16 @@ in
 
   gtk = {
     enable = true;
-    font.name = "Monocraft Nerd Font";
+    font = {
+      package = pkgs.monocraft;
+      name = "Monocraft Nerd Font";
+      size = 10;
+    };
+    cursorTheme = {
+      package = pkgs.numix-cursor-theme;
+      name = "Numix-Cursor-Light";
+      size = 24;
+    };
     theme = {
       package = purpleDark;
       name = "050010";
