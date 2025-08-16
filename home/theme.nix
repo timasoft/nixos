@@ -19,6 +19,7 @@ in
 
   gtk = {
     enable = true;
+    font.name = "Monocraft Nerd Font";
     theme = {
       package = purpleDark;
       name = "050010";
