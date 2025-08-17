@@ -25,8 +25,8 @@ in
       size = 10;
     };
     cursorTheme = {
-      package = pkgs.numix-cursor-theme;
-      name = "Numix-Cursor-Light";
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
       size = 24;
     };
     theme = {
