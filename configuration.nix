@@ -103,7 +103,8 @@
   wofi
   mc
   yazi
-  steam
+  prismlauncher
+  mangohud
   btop-cuda
   killall
   pavucontrol
@@ -139,6 +140,9 @@
   programs.firefox.enable = true;
 
   programs.fish.enable = true;
+
+  programs.steam.enable = true;
+  programs.gamemode.enable = true;
 
   programs.zoxide.enableFishIntegration = true;
 

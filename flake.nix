@@ -6,9 +6,11 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "github:nix-community/nixvim/nixos-25.05";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    aagl.url = "github:ezKEa/aagl-gtk-on-nix/release-25.05";
+    aagl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, aagl, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
@@ -19,16 +21,20 @@
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
-	{
-	  home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.tima = {
-	      imports = [
-	        nixvim.homeManagerModules.nixvim
-	        ./home.nix
-	      ];
-	  };
-	}
+        {
+          home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.tima = {
+              imports = [
+                nixvim.homeManagerModules.nixvim
+                ./home.nix
+              ];
+          };
+        }
+        {
+          imports = [ aagl.nixosModules.default ];
+          programs.anime-game-launcher.enable = true;
+        }
       ];
       specialArgs = {
         unstable = unstablePkgs;
