@@ -18,12 +18,12 @@
       lazygit-nvim
       telescope-nvim
       lualine-nvim
-      barbecue-nvim
+      # barbecue-nvim
       legendary-nvim
       mini-nvim
       dressing-nvim
       nvim-colorizer-lua
-      gitsigns-nvim
+      coc-git
       coc-nvim
       coc-css
       coc-json
@@ -44,6 +44,9 @@
       vim.g.neovide_normal_opacity = 0.95
       vim.g.neovide_scroll_animation_length = 0.1
       vim.g.coc_global_extensions = { 'coc-discord-rpc' }
+      vim.g.minimap_git_colors = 1
+      vim.g.minimap_highlight_search = 1
+      vim.g.minimap_auto_start = 1
       vim.o.guifont = "Monocraft Nerd Font:h10"
 
       vim.opt.termguicolors = true
@@ -66,9 +69,28 @@
       pcall(function()
         local lualine = require('lualine')
         lualine.setup {
-          options = { icons_enabled = true, theme = 'iceberg_dark', component_separators = { left = '', right = ''}, section_separators = { left = '', right = ''}, disabled_filetypes = { statusline = {}, winbar = {} }, always_divide_middle = true, globalstatus = false, refresh = { statusline = 1000, tabline = 1000, winbar = 1000 } },
-          sections = { lualine_a = {'mode'}, lualine_b = {'branch', 'diff', 'diagnostics'}, lualine_c = {'filename'}, lualine_x = {'encoding', 'fileformat', 'filetype'}, lualine_y = {'progress'}, lualine_z = {'location'} },
-          inactive_sections = { lualine_c = {'filename'}, lualine_x = {'location'} },
+          options = {
+            icons_enabled = true,
+            theme = 'iceberg_dark',
+            component_separators = { left = '', right = '' },
+            section_separators = { left = '', right = '' },
+            disabled_filetypes = { statusline = {}, winbar = {} },
+            always_divide_middle = true,
+            globalstatus = false,
+            refresh = { statusline = 1000, tabline = 1000, winbar = 1000 }
+          },
+          sections = {
+            lualine_a = {'mode'},
+            lualine_b = {'branch', 'diff', 'diagnostics'},
+            lualine_c = {'filename'},
+            lualine_x = {'encoding', 'fileformat', 'filetype'},
+            lualine_y = {'progress'},
+            lualine_z = {'location'}
+          },
+          inactive_sections = {
+            lualine_c = {'filename'},
+            lualine_x = {'location'}
+          },
         }
       end)
 
@@ -88,7 +110,21 @@
       pcall(function()
         require("colorizer").setup {
           filetypes = { "*" },
-          user_default_options = { RGB = true, RRGGBB = true, names = true, RRGGBBAA = true, AARRGGBB = true, rgb_fn = true, hsl_fn = true, css = true, css_fn = true, mode = "background", tailwind = true, sass = { enable = false, parsers = { "css" }, }, virtualtext = "■", always_update = false },
+          user_default_options = {
+            RGB = true,
+            RRGGBB = true,
+            names = true,
+            RRGGBBAA = true,
+            AARRGGBB = true,
+            rgb_fn = true,
+            hsl_fn = true,
+            css = true,
+            css_fn = true,
+            mode = "background",
+            tailwind = true,
+            sass = { enable = false, parsers = { "css" },
+          },
+          virtualtext = "■", always_update = false },
           buftypes = {},
         }
       end)
@@ -100,10 +136,9 @@
       vim.api.nvim_set_keymap('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"', { noremap = true, silent = true, expr = true })
 
 
-      vim.keymap.set('n', '<Leader>m', MiniMap.toggle)
+      vim.keymap.set('n', '<leader>m', ':MinimapToggle<CR>', { noremap = true, silent = true })
       vim.cmd('highlight Normal guibg=#050010')
       vim.cmd('tnoremap <Esc> <C-\\><C-n>')
     '';
   };
 }
-
