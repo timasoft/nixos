@@ -115,6 +115,7 @@
   home-manager
   nftables
   neovim
+  hyprland-qt-support
   #  wget
   ];
 
@@ -123,6 +124,18 @@
   ];
 
   environment.variables.EDITOR = "nvim";
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.QML_IMPORT_PATH = "${pkgs.hyprland-qt-support}/lib/qt-6/qml";
+
+  environment.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE    = "wayland";
+    GDK_BACKEND        = "wayland";
+    QT_QPA_PLATFORM    = "wayland";
+    QT_QPA_PLATFORMTHEME = "gtk3";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
