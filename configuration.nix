@@ -116,6 +116,7 @@
   nftables
   neovim
   hyprland-qt-support
+  libqalculate
   #  wget
   ];
 
