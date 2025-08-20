@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./configuration/fileSystems.nix
       ./configuration/nvidia.nix
+      ./configuration/ollama.nix
       # ./zapret.nix
     ];
 
