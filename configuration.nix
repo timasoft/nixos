@@ -11,6 +11,7 @@
       ./configuration/fileSystems.nix
       ./configuration/nvidia.nix
       ./configuration/ollama.nix
+      ./configuration/homepage.nix
       # ./zapret.nix
     ];
 
