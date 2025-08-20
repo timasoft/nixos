@@ -21,7 +21,7 @@ in
     enable = true;
     font = {
       package = pkgs.monocraft;
-      name = "Monocraft Nerd Font";
+      name = "Monocraft";
       size = 10;
     };
     cursorTheme = {
