@@ -14,6 +14,12 @@
 
     listenPort = 8082;
 
+    customCSS = ''
+      body, html {
+        font-family: Monocraft, sans-serif !important;
+      }
+    '';
+
     widgets = [
       {
         resources = {
@@ -24,8 +30,11 @@
       }
       {
         search = {
-          provider = "duckduckgo";
+          provider = "custom";
+          url = "http://10.1.1.195:8888/search?q=";
           target = "_blank";
+          suggestionUrl = "http://10.1.1.195:8888/autocompleter?type=list&q=";
+          showSearchSuggestions = true;
         };
       }
     ];
@@ -38,7 +47,7 @@
               {
                 abbr = "GH";
                 href = "https://github.com/";
-                icon = "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg";
+                icon = "https://cdn.simpleicons.org/github";
               }
             ];
           }
@@ -47,7 +56,7 @@
               {
                 abbr = "NP";
                 href = "https://search.nixos.org/";
-                icon = "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nixos.svg";
+                icon = "https://cdn.simpleicons.org/nixos";
               }
             ];
           }
@@ -57,7 +66,17 @@
                 abbr = "NS";
                 href = "https://mynixos.com/search/";
                 description = "Search for NixOS options";
-                icon = "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nixos.svg";
+                icon = "https://cdn.simpleicons.org/nixos";
+              }
+            ];
+          }
+          {
+            SimpleIcons = [
+              {
+                abbr = "SI";
+                href = "https://simpleicons.org/";
+                description = "Search for simple icons";
+                icon = "https://cdn.simpleicons.org/simpleicons";
               }
             ];
           }
@@ -70,7 +89,7 @@
               {
                 abbr = "YT";
                 href = "https://www.youtube.com/";
-                icon = "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg";
+                icon = "https://cdn.simpleicons.org/youtube";
               }
             ];
           }
@@ -88,7 +107,7 @@
               {
                 abbr = "KP";
                 href = "https://hd.kinopoisk.ru/";
-                icon = "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/kinopoisk.svg";
+                icon = "https://cdn.simpleicons.org/kinopoisk";
               }
             ];
           }
@@ -101,7 +120,7 @@
               {
                 abbr = "RE";
                 href = "https://www.reddit.com/";
-                icon = "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg";
+                icon = "https://cdn.simpleicons.org/reddit";
               }
             ];
           }
@@ -123,6 +142,17 @@
             "ComfyUI" = {
               description = "Needs manual start";
               href = "http://10.1.1.195:8188";
+            };
+          }
+        ];
+      }
+      {
+        "Search" = [
+          {
+            "SearXNG" = {
+              description = "Powerful search";
+              href = "http://10.1.1.195:8888";
+              icon = "https://cdn.simpleicons.org/searxng";
             };
           }
         ];
