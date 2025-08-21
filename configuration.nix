@@ -12,6 +12,7 @@
       ./configuration/nvidia.nix
       ./configuration/ollama.nix
       ./configuration/homepage.nix
+      ./configuration/searx.nix
       # ./zapret.nix
     ];
 
