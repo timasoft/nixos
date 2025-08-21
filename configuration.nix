@@ -13,6 +13,7 @@
       ./configuration/ollama.nix
       ./configuration/homepage.nix
       ./configuration/searx.nix
+      ./configuration/llama-cpp.nix
       # ./zapret.nix
     ];
 

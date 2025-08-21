@@ -35,6 +35,7 @@
       coc-yaml
       coc-toml
       minimap-vim
+      llama-vim
     # ] ++ [
     #   (pkgs.vimPlugins."minimap.vim")
     ];
