@@ -9,6 +9,11 @@
     lazygit
     neovide
     flatpak
+    yandex-music
+    telegram-desktop
+    prismlauncher
+    unstable.discord
+    unstable.betterdiscordctl
     nvtopPackages.nvidia
   ];
 

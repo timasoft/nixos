@@ -87,8 +87,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  unstable.discord
-  unstable.betterdiscordctl
   unstable.hyprland
   unstable.waybar
   swaybg
@@ -98,16 +96,13 @@
   vulkan-tools
   ly
   jq
-  socat
   git
   upower
   swaynotificationcenter
   kitty
-  telegram-desktop
   wofi
   mc
   yazi
-  prismlauncher
   mangohud
   btop-cuda
   killall
