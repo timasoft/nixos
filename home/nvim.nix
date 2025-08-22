@@ -23,8 +23,10 @@
       mini-nvim
       dressing-nvim
       nvim-colorizer-lua
-      coc-git
+      crates-nvim
+      rust-vim
       coc-nvim
+      coc-git
       coc-css
       coc-json
       coc-html
@@ -36,8 +38,6 @@
       coc-toml
       minimap-vim
       llama-vim
-    # ] ++ [
-    #   (pkgs.vimPlugins."minimap.vim")
     ];
 
     extraConfigLua = ''
@@ -48,6 +48,7 @@
       vim.g.minimap_git_colors = 1
       vim.g.minimap_highlight_search = 1
       vim.g.minimap_auto_start = 1
+      vim.g.rustfmt_autosave = 1
       vim.o.guifont = "Monocraft Nerd Font:h10"
 
       vim.opt.termguicolors = true
@@ -66,6 +67,8 @@
       pcall(function() require('mini.comment').setup() end)
       pcall(function() require('mini.move').setup() end)
       pcall(function() require('mini.trailspace').setup() end)
+
+      pcall(function() require('crates').setup() end)
 
       pcall(function()
         local lualine = require('lualine')
@@ -142,4 +145,15 @@
       vim.cmd('tnoremap <Esc> <C-\\><C-n>')
     '';
   };
+  home.file.".config/nvim/coc-settings.json".text = ''
+    {
+      "rust-analyzer.check.overrideCommand": [
+      "cargo",
+      "clippy",
+      "--workspace",
+      "--message-format=json",
+      "--all-targets"
+      ]
+    }
+  '';
 }
