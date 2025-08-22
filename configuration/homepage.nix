@@ -80,6 +80,16 @@
               }
             ];
           }
+          {
+            CratesIO = [
+              {
+                abbr = "Cio";
+                href = "https://crates.io/";
+                description = "Search for crates (for rust)";
+                icon = "https://raw.githubusercontent.com/rust-lang/crates.io/refs/heads/main/public/favicon.ico";
+              }
+            ];
+          }
         ];
       }
       {
