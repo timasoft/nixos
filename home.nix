@@ -21,6 +21,7 @@
     ./home/nvim.nix
     ./home/flatpak.nix
     ./home/theme.nix
+    ./home/kitty.nix
   ];
 
   programs.git = {
