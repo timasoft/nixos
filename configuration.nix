@@ -114,6 +114,7 @@
   home-manager
   nftables
   neovim
+  fishPlugins.tide
   hyprland-qt-support
   libqalculate
   #  wget

@@ -22,6 +22,7 @@
     ./home/flatpak.nix
     ./home/theme.nix
     ./home/kitty.nix
+    ./home/fish.nix
   ];
 
   programs.git = {

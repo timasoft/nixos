@@ -23,13 +23,7 @@
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.tima = {
-              imports = [
-                nixvim.homeManagerModules.nixvim
-                ./home.nix
-              ];
-          };
+          home-manager.useUserPackages = true;
         }
         {
           imports = [ aagl.nixosModules.default ];
