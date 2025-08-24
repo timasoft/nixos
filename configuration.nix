@@ -98,6 +98,9 @@
   jq
   fd
   eza
+  dust
+  bat
+  tokei
   git
   upower
   swaynotificationcenter
