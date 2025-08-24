@@ -121,6 +121,7 @@
   neovim
   fishPlugins.tide
   hyprland-qt-support
+  gpu-screen-recorder-gtk
   libqalculate
   #  wget
   ];
@@ -164,6 +165,8 @@
   programs.gamemode.enable = true;
 
   programs.zoxide.enableFishIntegration = true;
+
+  programs.gpu-screen-recorder.enable = true;
 
   # List services that you want to enable:
 
