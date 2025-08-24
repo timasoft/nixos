@@ -14,5 +14,8 @@
           rm -f -- "$tmp"
       end
     '';
+    shellAliases = {
+      ls = "eza";
     };
+  };
 }

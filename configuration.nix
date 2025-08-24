@@ -96,6 +96,8 @@
   vulkan-tools
   ly
   jq
+  fd
+  eza
   git
   upower
   swaynotificationcenter
