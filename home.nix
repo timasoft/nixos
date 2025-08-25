@@ -8,7 +8,6 @@
   home.packages = with pkgs; [
     lazygit
     neovide
-    flatpak
     yandex-music
     telegram-desktop
     prismlauncher
