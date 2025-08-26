@@ -6,6 +6,7 @@
   home.homeDirectory = "/home/tima";
 
   home.packages = with pkgs; [
+    pipx
     lazygit
     neovide
     yandex-music

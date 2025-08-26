@@ -14,6 +14,11 @@
           rm -f -- "$tmp"
       end
     '';
+    loginShellInit = ''
+      if not contains $HOME/.local/bin $fish_user_paths
+        set -U fish_user_paths $HOME/.local/bin $fish_user_paths
+      end
+    '';
     shellAliases = {
       ls = "eza";
     };
