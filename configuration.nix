@@ -126,6 +126,7 @@
     hyprsysteminfo
     gpu-screen-recorder-gtk
     libqalculate
+    swappy
   #  wget
   ];
 

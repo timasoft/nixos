@@ -14,6 +14,7 @@
     ];
 
     extraPlugins = with pkgs.vimPlugins; [
+      context-vim
       neo-tree-nvim
       lazygit-nvim
       telescope-nvim
