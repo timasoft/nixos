@@ -14,6 +14,7 @@
       ./configuration/homepage.nix
       ./configuration/searx.nix
       ./configuration/llama-cpp.nix
+      ./configuration/pkgs.nix
       # ./zapret.nix
     ];
 
@@ -80,60 +81,6 @@
     packages = with pkgs; [];
     shell = "${pkgs.fish}/bin/fish";
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    unstable.hyprland
-    unstable.waybar
-    swaybg
-    hyprshot
-    hyprlock
-    zoxide
-    vulkan-tools
-    ly
-    jq
-    fd
-    eza
-    dust
-    ncdu
-    bat
-    tokei
-    git
-    upower
-    swaynotificationcenter
-    kitty
-    wofi
-    mc
-    yazi
-    mangohud
-    btop-cuda
-    killall
-    pavucontrol
-    fastfetch
-    pfetch
-    gsimplecal
-    cliphist
-    wl-clipboard
-    home-manager
-    nftables
-    neovim
-    flatpak
-    fishPlugins.tide
-    hyprland-qt-support
-    hyprsysteminfo
-    gpu-screen-recorder-gtk
-    libqalculate
-    swappy
-  #  wget
-  ];
-
-  fonts.packages = with pkgs; [
-    monocraft
-  ];
 
   environment.variables.EDITOR = "nvim";
 
