@@ -9,6 +9,8 @@
     pipx
     lazygit
     neovide
+    ghfetch
+    onefetch
     yandex-music
     telegram-desktop
     prismlauncher

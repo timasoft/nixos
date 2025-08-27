@@ -114,6 +114,7 @@
     killall
     pavucontrol
     fastfetch
+    pfetch
     gsimplecal
     cliphist
     wl-clipboard
