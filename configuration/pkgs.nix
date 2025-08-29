@@ -48,6 +48,7 @@
     gpu-screen-recorder-gtk
     libqalculate
     swappy
+    wofi-emoji
   #  wget
   ];
 
