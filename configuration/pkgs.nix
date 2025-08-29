@@ -49,10 +49,12 @@
     libqalculate
     swappy
     wofi-emoji
+    wofi-power-menu
   #  wget
   ];
 
   fonts.packages = with pkgs; [
     monocraft
+    nerd-fonts.symbols-only
   ];
 }
