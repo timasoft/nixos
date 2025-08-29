@@ -135,6 +135,8 @@
     pulse.enable = true;
   };
 
+  services.hardware.openrgb.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Open ports in the firewall.
