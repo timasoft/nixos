@@ -17,6 +17,7 @@
     unstable.discord
     unstable.betterdiscordctl
     nvtopPackages.nvidia
+    libreoffice
   ];
 
   imports = [
@@ -33,4 +34,3 @@
     userEmail = "tima.klester@yandex.ru";
   };
 }
-
