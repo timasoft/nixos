@@ -137,6 +137,9 @@
 
   services.hardware.openrgb.enable = true;
 
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Open ports in the firewall.
