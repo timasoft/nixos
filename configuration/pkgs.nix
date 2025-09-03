@@ -51,6 +51,7 @@
     wofi-emoji
     wofi-power-menu
   #  wget
+    wf-recorder
   ];
 
   fonts.packages = with pkgs; [

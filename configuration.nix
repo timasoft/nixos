@@ -105,7 +105,7 @@
   #   enableSSHSupport = true;
   # };
 
-  programs.hyprland ={
+  programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
