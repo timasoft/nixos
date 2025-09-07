@@ -50,7 +50,7 @@
     swappy
     wofi-emoji
     wofi-power-menu
-  #  wget
+    #  wget
     wf-recorder
   ];
 
