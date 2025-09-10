@@ -52,6 +52,7 @@
     wofi-power-menu
     #  wget
     wf-recorder
+    byedpi
   ];
 
   fonts.packages = with pkgs; [
