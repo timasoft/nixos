@@ -53,6 +53,7 @@
     #  wget
     wf-recorder
     byedpi
+    marp-cli
   ];
 
   fonts.packages = with pkgs; [
