@@ -106,20 +106,8 @@
   # };
 
   programs.hyprland = {
-    enable = true;
     xwayland.enable = true;
   };
-
-  programs.firefox.enable = true;
-
-  programs.fish.enable = true;
-
-  programs.steam.enable = true;
-  programs.gamemode.enable = true;
-
-  programs.zoxide.enableFishIntegration = true;
-
-  programs.gpu-screen-recorder.enable = true;
 
   # List services that you want to enable:
 

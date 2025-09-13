@@ -60,4 +60,17 @@
     monocraft
     nerd-fonts.symbols-only
   ];
+
+  programs.hyprland.enable = true;
+
+  programs.firefox.enable = true;
+
+  programs.fish.enable = true;
+
+  programs.steam.enable = true;
+  programs.gamemode.enable = true;
+
+  programs.zoxide.enableFishIntegration = true;
+
+  programs.gpu-screen-recorder.enable = true;
 }
