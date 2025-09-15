@@ -5,27 +5,13 @@
   home.username = "tima";
   home.homeDirectory = "/home/tima";
 
-  home.packages = with pkgs; [
-    pipx
-    lazygit
-    neovide
-    ghfetch
-    onefetch
-    yandex-music
-    telegram-desktop
-    prismlauncher
-    unstable.discord
-    unstable.betterdiscordctl
-    nvtopPackages.nvidia
-    libreoffice
-  ];
-
   imports = [
     ./home/nvim.nix
     ./home/flatpak.nix
     ./home/theme.nix
     ./home/kitty.nix
     ./home/fish.nix
+    ./home/pkgs.nix
   ];
 
   programs.git = {
