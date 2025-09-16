@@ -8,9 +8,10 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     aagl.url = "github:ezKEa/aagl-gtk-on-nix/release-25.05";
     aagl.inputs.nixpkgs.follows = "nixpkgs";
+    declair-rs.url = "github:timasoft/declair-rs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, aagl, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, aagl, declair-rs, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
@@ -28,6 +29,11 @@
         {
           imports = [ aagl.nixosModules.default ];
           programs.anime-game-launcher.enable = true;
+        }
+        {
+          environment.systemPackages = [
+            declair-rs.packages.${system}.default
+          ];
         }
       ];
       specialArgs = {
