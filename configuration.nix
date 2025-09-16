@@ -16,6 +16,7 @@
       ./configuration/llama-cpp.nix
       ./configuration/pkgs.nix
       ./configuration/v4l2loopback.nix
+      ./configuration/printing.nix
       # ./zapret.nix
     ];
 

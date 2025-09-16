@@ -12,5 +12,6 @@
     ./home/kitty.nix
     ./home/fish.nix
     ./home/pkgs.nix
+    ./home/git.nix
   ];
 }
