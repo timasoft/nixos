@@ -7,7 +7,7 @@
     neovide
     ghfetch
     onefetch
-    yandex-music
+    # yandex-music
     telegram-desktop
     prismlauncher
     unstable.discord
