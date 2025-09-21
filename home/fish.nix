@@ -3,7 +3,6 @@
     enable = true;
     shellInit = ''
       set -g fish_greeting ""
-      pfetch
       zoxide init fish | source
 
       function y
@@ -22,6 +21,7 @@
     '';
     shellAliases = {
       ls = "eza";
+      q = "exit";
     };
   };
 }

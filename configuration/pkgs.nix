@@ -50,11 +50,26 @@
     swappy
     wofi-emoji
     wofi-power-menu
-  #  wget
+    #  wget
+    byedpi
+    marp-cli
   ];
 
   fonts.packages = with pkgs; [
     monocraft
     nerd-fonts.symbols-only
   ];
+
+  programs.hyprland.enable = true;
+
+  programs.firefox.enable = true;
+
+  programs.fish.enable = true;
+
+  programs.steam.enable = true;
+  programs.gamemode.enable = true;
+
+  programs.zoxide.enableFishIntegration = true;
+
+  programs.gpu-screen-recorder.enable = true;
 }

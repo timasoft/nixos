@@ -138,7 +138,7 @@
 
       vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? coc#pum#next(1) : "<Tab>"', { noremap = true, expr = true })
       vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? coc#pum#prev(1) : "<C-h>"', { noremap = true, expr = true })
-      vim.api.nvim_set_keymap('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"', { noremap = true, silent = true, expr = true })
+      vim.api.nvim_set_keymap('i', '<kEnter>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<kEnter>"', { noremap = true, silent = true, expr = true })
 
 
       vim.keymap.set('n', '<leader>m', ':MinimapToggle<CR>', { noremap = true, silent = true })
