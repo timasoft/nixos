@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # ./configuration/fileSystems.nix
+      ./configuration/fileSystems.nix
       # ./configuration/nvidia.nix
       # ./configuration/ollama.nix
       # ./configuration/homepage.nix
