@@ -51,6 +51,7 @@
     "psmouse.rate=80"
     "psmouse.resolution=400"
   ];
+  boot.kernelPackages= pkgs.linuxPackages_latest;
 
   networking.hostName = "jumper"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
