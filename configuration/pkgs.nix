@@ -28,6 +28,7 @@
     kitty
     wofi
     mc
+    fzf
     yazi
     mangohud
     btop-cuda
