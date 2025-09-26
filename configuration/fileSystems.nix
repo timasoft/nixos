@@ -1,6 +1,6 @@
 {
   fileSystems."/mnt/sdcard" = {
-  device = "/dev/mmcblk2p1";
+  device = "/dev/disk/by-uuid/65C2-E2A5";
   fsType = "vfat";
   options = [
     "rw"
