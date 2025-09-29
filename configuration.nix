@@ -17,6 +17,7 @@
       ./configuration/pkgs.nix
       ./configuration/v4l2loopback.nix
       ./configuration/printing.nix
+      ./configuration/plymouth.nix
       # ./zapret.nix
     ];
 
