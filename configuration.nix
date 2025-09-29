@@ -17,6 +17,7 @@
       ./configuration/pkgs.nix
       ./configuration/tlp.nix
       # ./configuration/v4l2loopback.nix
+      ./configuration/plymouth.nix
       # ./zapret.nix
     ];
 
