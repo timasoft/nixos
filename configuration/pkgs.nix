@@ -55,6 +55,8 @@
     wf-recorder
     byedpi
     marp-cli
+
+    unstable.hyprviz
   ];
 
   fonts.packages = with pkgs; [
