@@ -7,4 +7,3 @@
     userEmail = "tima.klester@yandex.ru";
   };
 }
-

@@ -28,7 +28,6 @@
     kitty
     wofi
     mc
-    fzf
     yazi
     mangohud
     btop-cuda
@@ -52,11 +51,9 @@
     wofi-emoji
     wofi-power-menu
     #  wget
-    wf-recorder
     byedpi
     marp-cli
 
-    unstable.hyprviz
   ];
 
   fonts.packages = with pkgs; [

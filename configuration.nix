@@ -10,15 +10,10 @@
       ./hardware-configuration.nix
       ./configuration/fileSystems.nix
       ./configuration/nvidia.nix
-      ./configuration/ollama.nix
-      ./configuration/homepage.nix
-      ./configuration/searx.nix
       ./configuration/llama-cpp.nix
       ./configuration/pkgs.nix
-      ./configuration/v4l2loopback.nix
-      ./configuration/printing.nix
+      ./configuration/tlp.nix
       ./configuration/plymouth.nix
-      # ./zapret.nix
     ];
 
   hardware.graphics = {
@@ -36,13 +31,20 @@
     };
   };
 
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 17 * 1024;
+    }
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
-  boot.kernelPackages = pkgs.linuxPackages_6_16;
+  boot.kernelPackages= pkgs.linuxPackages_latest;
 
-  networking.hostName = "timofey"; # Define your hostname.
+  networking.hostName = "timabook"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -81,7 +83,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tima = {
     isNormalUser = true;
-    description = "timofey";
+    description = "timabook";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
     shell = "${pkgs.fish}/bin/fish";
@@ -109,9 +111,21 @@
   #   enableSSHSupport = true;
   # };
 
-  programs.hyprland = {
+  programs.hyprland ={
+    enable = true;
     xwayland.enable = true;
   };
+
+  programs.firefox.enable = true;
+
+  programs.fish.enable = true;
+
+  programs.steam.enable = true;
+  programs.gamemode.enable = true;
+
+  programs.zoxide.enableFishIntegration = true;
+
+  programs.gpu-screen-recorder.enable = true;
 
   # List services that you want to enable:
 
@@ -127,8 +141,7 @@
     pulse.enable = true;
   };
 
-  services.hardware.openrgb.enable = true;
-  # services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
+  # services.hardware.openrgb.enable = true;
 
   services.gvfs.enable = true;
   services.udisks2.enable = true;

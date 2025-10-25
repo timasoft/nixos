@@ -1,18 +1,18 @@
 {
   fileSystems."/mnt/nvme" = {
-    device = "/dev/disk/by-uuid/f6be5257-503c-49d2-b856-939e08dc73d5";
+    device = "/dev/disk/by-uuid/4a198bbb-f4f8-4482-bdf9-3fff71c6adb0";
     fsType = "btrfs";
     options = [ "noatime" "ssd" ];
   };
 
   fileSystems."/mnt/archroot" = {
-    device = "/dev/disk/by-uuid/f5e0ce07-1227-4fcb-8674-a5412e784f90";
+    device = "/dev/disk/by-uuid/c0b1d877-a3bc-47e5-a5a6-b8ca5494b0f4";
     fsType = "btrfs";
     options = [ "subvol=@" "noatime" "ssd" ];
   };
 
   fileSystems."/mnt/archhome" = {
-    device = "/dev/disk/by-uuid/f5e0ce07-1227-4fcb-8674-a5412e784f90";
+    device = "/dev/disk/by-uuid/c0b1d877-a3bc-47e5-a5a6-b8ca5494b0f4";
     fsType = "btrfs";
     options = [ "subvol=@home" "noatime" "ssd" ];
   };
