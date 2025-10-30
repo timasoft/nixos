@@ -70,6 +70,11 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings.data-root = "/mnt/nvme/docker";
+  };
+
   security.polkit.enable = true;
 
   # Configure keymap in X11
@@ -82,7 +87,7 @@
   users.users.tima = {
     isNormalUser = true;
     description = "timofey";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
     shell = "${pkgs.fish}/bin/fish";
   };

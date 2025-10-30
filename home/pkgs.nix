@@ -14,5 +14,6 @@
     unstable.betterdiscordctl
     nvtopPackages.nvidia
     libreoffice
+    git-lfs
   ];
 }
