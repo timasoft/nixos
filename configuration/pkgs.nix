@@ -55,7 +55,7 @@
     wf-recorder
     byedpi
     marp-cli
-
+    adwsteamgtk
     unstable.hyprviz
   ];
 
@@ -70,7 +70,17 @@
 
   programs.fish.enable = true;
 
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    gamescopeSession.enable = true;
+  };
+
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
+
   programs.gamemode.enable = true;
 
   programs.zoxide.enableFishIntegration = true;
