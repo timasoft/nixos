@@ -56,6 +56,8 @@
     byedpi
     marp-cli
     adwsteamgtk
+    mpv
+    ripgrep
     unstable.hyprviz
   ];
 

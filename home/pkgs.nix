@@ -16,4 +16,6 @@
     libreoffice
     git-lfs
   ];
+
+  programs.obs-studio.enable = true;
 }
