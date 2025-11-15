@@ -3,7 +3,9 @@
     enable = true;
     shellInit = ''
       set -g fish_greeting ""
-      pfetch
+      if status is-interactive
+        pfetch
+      end
       zoxide init fish | source
 
       function y

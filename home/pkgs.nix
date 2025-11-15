@@ -14,6 +14,7 @@
     unstable.betterdiscordctl
     nvtopPackages.nvidia
     libreoffice
+    unstable.hyprviz
   ];
 }
 
