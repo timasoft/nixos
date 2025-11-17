@@ -51,7 +51,7 @@
     swappy
     wofi-emoji
     wofi-power-menu
-    #  wget
+    wget
     wf-recorder
     byedpi
     marp-cli
@@ -88,4 +88,6 @@
   programs.zoxide.enableFishIntegration = true;
 
   programs.gpu-screen-recorder.enable = true;
+
+  programs.dconf.enable = true;
 }

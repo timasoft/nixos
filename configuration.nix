@@ -40,7 +40,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
-  boot.kernelPackages = pkgs.linuxPackages_6_16;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "timofey"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -133,7 +133,7 @@
   };
 
   services.hardware.openrgb.enable = true;
-  # services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
+  services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
 
   services.gvfs.enable = true;
   services.udisks2.enable = true;

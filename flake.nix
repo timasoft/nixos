@@ -11,7 +11,16 @@
     declair-rs.url = "github:timasoft/declair-rs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, aagl, declair-rs, ... }:
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    nixvim,
+    aagl,
+    declair-rs,
+    ...
+  }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
