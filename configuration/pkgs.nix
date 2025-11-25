@@ -58,6 +58,8 @@
     adwsteamgtk
     mpv
     ripgrep
+    nix-output-monitor
+    nvd
     unstable.hyprviz
   ];
 

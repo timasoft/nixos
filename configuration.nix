@@ -18,6 +18,7 @@
       ./configuration/v4l2loopback.nix
       ./configuration/printing.nix
       ./configuration/plymouth.nix
+      ./configuration/nh.nix
       # ./zapret.nix
     ];
 
@@ -104,6 +105,8 @@
     GDK_BACKEND        = "wayland";
     QT_QPA_PLATFORM    = "wayland";
     QT_QPA_PLATFORMTHEME = "gtk3";
+
+    FLAKE = "/home/tima/nixos";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
