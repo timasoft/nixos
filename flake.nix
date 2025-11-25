@@ -6,8 +6,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "github:nix-community/nixvim/nixos-25.05";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    aagl.url = "github:ezKEa/aagl-gtk-on-nix/release-25.05";
-    aagl.inputs.nixpkgs.follows = "nixpkgs";
+    # aagl.url = "github:ezKEa/aagl-gtk-on-nix/release-25.05";
+    # aagl.inputs.nixpkgs.follows = "nixpkgs";
     declair-rs.url = "github:timasoft/declair-rs";
   };
 
@@ -17,7 +17,7 @@
     nixpkgs-unstable,
     home-manager,
     nixvim,
-    aagl,
+    # aagl,
     declair-rs,
     ...
   }:
@@ -35,10 +35,10 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
         }
-        {
-          imports = [ aagl.nixosModules.default ];
-          programs.anime-game-launcher.enable = true;
-        }
+        # {
+        #   imports = [ aagl.nixosModules.default ];
+        #   programs.anime-game-launcher.enable = true;
+        # }
         {
           environment.systemPackages = [
             declair-rs.packages.${system}.default
