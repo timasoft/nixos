@@ -23,6 +23,8 @@
     shellAliases = {
       ls = "eza";
       q = "exit";
+      mountusb = "udisksctl mount -b /dev/(lsblk -J -o NAME,TRAN | jq -r '.blockdevices[] | select(.tran==\"usb\") | .name' | head -1)\"1\"";
+      unmountusb = "udisksctl unmount -b /dev/(lsblk -J -o NAME,TRAN | jq -r '.blockdevices[] | select(.tran==\"usb\") | .name' | head -1)\"1\"";
     };
   };
 }
