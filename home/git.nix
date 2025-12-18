@@ -3,8 +3,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "timasoft";
-    userEmail = "tima.klester@yandex.ru";
+    settings = {
+      user = {
+        name = "timasoft";
+        email = "tima.klester@yandex.ru";
+      };
+    };
   };
 }
-
