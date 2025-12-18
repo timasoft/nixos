@@ -14,6 +14,7 @@
       ./configuration/pkgs.nix
       ./configuration/tlp.nix
       ./configuration/plymouth.nix
+      ./configuration/nh.nix
     ];
 
   hardware.graphics = {
@@ -101,6 +102,7 @@
     GDK_BACKEND        = "wayland";
     QT_QPA_PLATFORM    = "wayland";
     QT_QPA_PLATFORMTHEME = "gtk3";
+    NH_FLAKE = "/home/tima/nixos";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -160,6 +162,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 
 }

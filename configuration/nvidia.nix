@@ -3,7 +3,7 @@
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = true;
-    open = false;
+    open = true;
     nvidiaSettings = true;
   };
   services.xserver.videoDrivers = [

@@ -12,9 +12,10 @@
     prismlauncher
     unstable.discord
     unstable.betterdiscordctl
-    nvtopPackages.nvidia
+    # nvtopPackages.nvidia
     libreoffice
-    unstable.hyprviz
   ];
+
+  programs.obs-studio.enable = true;
 }
 

@@ -50,10 +50,15 @@
     swappy
     wofi-emoji
     wofi-power-menu
-    #  wget
+    wget
     byedpi
     marp-cli
     adwsteamgtk
+    mpv
+    ripgrep
+    nix-output-monitor
+    nvd
+    unstable.hyprviz
   ];
 
   fonts.packages = with pkgs; [
@@ -83,4 +88,6 @@
   programs.zoxide.enableFishIntegration = true;
 
   programs.gpu-screen-recorder.enable = true;
+
+  programs.dconf.enable = true;
 }
