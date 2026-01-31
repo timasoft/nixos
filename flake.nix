@@ -8,6 +8,7 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     # aagl.url = "github:ezKEa/aagl-gtk-on-nix/release-25.11";
     # aagl.inputs.nixpkgs.follows = "nixpkgs";
+    dw-proton.url = "github:imaviso/dwproton-flake";
   };
 
   outputs = {
@@ -17,6 +18,7 @@
     home-manager,
     nixvim,
     # aagl,
+    dw-proton,
     ...
   }:
   let
@@ -37,6 +39,11 @@
         #   imports = [ aagl.nixosModules.default ];
         #   programs.anime-game-launcher.enable = true;
         # }
+        {
+          programs.steam.extraCompatPackages = [
+            dw-proton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
+          ];
+        }
       ];
       specialArgs = {
         unstable = unstablePkgs;
