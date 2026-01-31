@@ -9,6 +9,7 @@
     # aagl.url = "github:ezKEa/aagl-gtk-on-nix/release-25.05";
     # aagl.inputs.nixpkgs.follows = "nixpkgs";
     declair-rs.url = "github:timasoft/declair-rs";
+    dw-proton.url = "github:imaviso/dwproton-flake";
   };
 
   outputs = {
@@ -19,6 +20,7 @@
     nixvim,
     # aagl,
     declair-rs,
+    dw-proton,
     ...
   }:
   let
@@ -42,6 +44,11 @@
         {
           environment.systemPackages = [
             declair-rs.packages.${system}.default
+          ];
+        }
+        {
+          programs.steam.extraCompatPackages = [
+            dw-proton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
           ];
         }
       ];
