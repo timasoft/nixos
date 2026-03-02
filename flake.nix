@@ -6,8 +6,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "github:nix-community/nixvim/nixos-25.11";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    # aagl.url = "github:ezKEa/aagl-gtk-on-nix/release-25.11";
-    # aagl.inputs.nixpkgs.follows = "nixpkgs";
+    stylix.url = "github:nix-community/stylix/release-25.11";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
     dw-proton.url = "github:imaviso/dwproton-flake";
   };
 
@@ -17,7 +17,7 @@
     nixpkgs-unstable,
     home-manager,
     nixvim,
-    # aagl,
+    stylix,
     dw-proton,
     ...
   }:
@@ -35,10 +35,6 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
         }
-        # {
-        #   imports = [ aagl.nixosModules.default ];
-        #   programs.anime-game-launcher.enable = true;
-        # }
         {
           programs.steam.extraCompatPackages = [
             dw-proton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
@@ -58,6 +54,7 @@
       };
       modules = [
         nixvim.homeManagerModules.nixvim
+        stylix.homeModules.stylix
         ./home.nix
         ];
     };

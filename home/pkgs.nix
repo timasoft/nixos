@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     pipx
-    lazygit
     neovide
     ghfetch
     onefetch
@@ -17,5 +16,6 @@
   ];
 
   programs.obs-studio.enable = true;
+  programs.lazygit.enable = true;
 }
 

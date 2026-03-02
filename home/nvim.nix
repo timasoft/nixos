@@ -6,6 +6,29 @@
 
     globals.mapleader = ";";
 
+    plugins.treesitter = {
+      enable = true;
+      settings = {
+        highlight.enable = true;
+        indent.enable = true;
+      };
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        rust
+        python
+        javascript
+        typescript
+        html
+        css
+        json
+        yaml
+        toml
+        markdown
+        bash
+        nix
+        lua
+      ];
+    };
+
     extraPackages = with pkgs; [
       nodejs
       yarn
@@ -39,6 +62,7 @@
       coc-toml
       minimap-vim
       llama-vim
+      indent-blankline-nvim
     ];
 
     extraConfigLua = ''
@@ -54,6 +78,7 @@
 
       vim.opt.termguicolors = true
       vim.wo.number = true
+      vim.wo.relativenumber = true
       vim.o.softtabstop = 4
       vim.o.shiftwidth = 4
       vim.o.expandtab = true
@@ -70,6 +95,13 @@
       pcall(function() require('mini.trailspace').setup() end)
 
       pcall(function() require('crates').setup() end)
+      pcall(function() require("ibl").setup({
+        scope = {
+          char = "▌",
+          show_start = false,
+          show_end = false,
+        }
+      }) end)
 
       pcall(function()
         local lualine = require('lualine')
@@ -139,8 +171,9 @@
       vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? coc#pum#next(1) : "<Tab>"', { noremap = true, expr = true })
       vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? coc#pum#prev(1) : "<C-h>"', { noremap = true, expr = true })
       vim.api.nvim_set_keymap('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"', { noremap = true, silent = true, expr = true })
+      vim.api.nvim_set_keymap('i', '<kEnter>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<kEnter>"', { noremap = true, silent = true, expr = true })
 
-
+      vim.keymap.set('n', 'gd', '<Plug>(coc-definition)', { noremap = true, silent = true })
       vim.keymap.set('n', '<leader>m', ':MinimapToggle<CR>', { noremap = true, silent = true })
       vim.cmd('highlight Normal guibg=#050010')
       vim.cmd('tnoremap <Esc> <C-\\><C-n>')
