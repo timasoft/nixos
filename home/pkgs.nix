@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     pipx
-    lazygit
     # neovide
     ghfetch
     onefetch
@@ -15,4 +14,6 @@
     # nvtopPackages.nvidia
     libreoffice
   ];
+
+  programs.lazygit.enable = true;
 }

@@ -7,11 +7,10 @@
 
   imports = [
     ./home/nvim.nix
-    # ./home/flatpak.nix
-    ./home/theme.nix
     ./home/kitty.nix
     ./home/fish.nix
     ./home/pkgs.nix
     ./home/git.nix
+    ./home/stylix.nix
   ];
 }

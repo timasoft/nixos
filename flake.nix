@@ -6,6 +6,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "github:nix-community/nixvim/nixos-25.11";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    stylix.url = "github:nix-community/stylix/release-25.11";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -14,6 +16,7 @@
     nixpkgs-unstable,
     home-manager,
     nixvim,
+    stylix,
     ...
   }:
   let
@@ -44,6 +47,7 @@
       };
       modules = [
         nixvim.homeManagerModules.nixvim
+        stylix.homeModules.stylix
         ./home.nix
         ];
     };
