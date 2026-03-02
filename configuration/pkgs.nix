@@ -7,8 +7,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    unstable.hyprland
-    unstable.waybar
+    # unstable.hyprland
+    # unstable.waybar
+    hyprland
+    waybar
     swaybg
     hyprshot
     hyprlock
@@ -57,7 +59,8 @@
     ripgrep
     nix-output-monitor
     nvd
-    unstable.hyprviz
+    # unstable.hyprviz
+    hyprviz
   ];
 
   fonts.packages = with pkgs; [
