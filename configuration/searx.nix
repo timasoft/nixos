@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, unstable, ... }:
 
 let
   baseUrl = "http://10.1.1.195:8888";
@@ -7,7 +7,7 @@ in
 {
   services.searx = {
     enable = true;
-    package = pkgs.searxng;
+    package = unstable.searxng;
 
     redisCreateLocally = true;
 

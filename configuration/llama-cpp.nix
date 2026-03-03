@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, unstable, ... }:
 
 {
   environment.systemPackages = [
-    (pkgs.llama-cpp.override {
+    (unstable.llama-cpp.override {
       cudaSupport = true;
     })
   ];

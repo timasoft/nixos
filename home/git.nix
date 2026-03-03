@@ -3,10 +3,10 @@
 {
   programs.git = {
     enable = true;
-    userName = "timasoft";
-    userEmail = "tima.klester@yandex.ru";
+    settings = {
+      user.name = "timasoft";
+      user.email = "tima.klester@yandex.ru";
 
-    extraConfig = {
       filter = {
         lfs = {
           clean = "git-lfs clean -- %f";
