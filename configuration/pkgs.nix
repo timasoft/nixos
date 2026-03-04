@@ -7,13 +7,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # unstable.hyprland
-    hyprland
-    # unstable.waybar
-    waybar
+    unstable.hyprland
     swaybg
     hyprshot
-    hyprlock
     zoxide
     vulkan-tools
     ly
@@ -28,7 +24,6 @@
     upower
     swaynotificationcenter
     kitty
-    wofi
     mc
     yazi
     mangohud
@@ -60,8 +55,12 @@
     ripgrep
     nix-output-monitor
     nvd
-    # unstable.hyprviz
     hyprviz
+    unstable.niri
+    xdg-desktop-portal-gnome
+    xwayland-satellite
+    cava
+    unstable.opencode
   ];
 
   fonts.packages = with pkgs; [
@@ -78,7 +77,10 @@
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
-    gamescopeSession.enable = true;
+    # gamescopeSession.enable = true;
+    extraCompatPackages = [
+      pkgs.proton-ge-bin
+    ];
   };
 
   programs.gamescope = {

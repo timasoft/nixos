@@ -6,13 +6,17 @@
     neovide
     ghfetch
     onefetch
-    # yandex-music
+    yandex-music
     telegram-desktop
-    prismlauncher
+    unstable.prismlauncher
     unstable.discord
-    unstable.betterdiscordctl
-    # nvtopPackages.nvidia
+    unstable.vesktop
+    # unstable.betterdiscordctl
+    nvtopPackages.nvidia
     libreoffice
+    gimp
+    kdePackages.kdenlive
+    tauon
   ];
 
   programs.obs-studio.enable = true;

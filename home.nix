@@ -5,6 +5,8 @@
   home.username = "tima";
   home.homeDirectory = "/home/tima";
 
+  gtk.gtk4.theme = config.gtk.theme;
+
   imports = [
     ./home/nvim.nix
     ./home/flatpak.nix
@@ -13,5 +15,11 @@
     ./home/pkgs.nix
     ./home/git.nix
     ./home/stylix.nix
+    ./home/noctalia.nix
+    ./home/niri.nix
+    ./home/wofi.nix
+    ./home/hyprlock.nix
+    ./home/cava-bg.nix
+    ./home/services.nix
   ];
 }

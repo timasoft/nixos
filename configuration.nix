@@ -10,11 +10,12 @@
       ./hardware-configuration.nix
       ./configuration/fileSystems.nix
       ./configuration/nvidia.nix
-      ./configuration/llama-cpp.nix
       ./configuration/pkgs.nix
       ./configuration/tlp.nix
       ./configuration/plymouth.nix
       ./configuration/nh.nix
+      ./configuration/syncthing.nix
+      ./configuration/niri.nix
     ];
 
   hardware.graphics = {
@@ -32,18 +33,18 @@
     };
   };
 
-  swapDevices = [
-    {
-      device = "/swapfile";
-      size = 17 * 1024;
-    }
-  ];
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
+    priority = 100;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
-  boot.kernelPackages= pkgs.linuxPackages_6_18;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "timabook"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -96,13 +97,11 @@
   environment.sessionVariables.QML_IMPORT_PATH = "${pkgs.hyprland-qt-support}/lib/qt-6/qml";
 
   environment.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE    = "wayland";
-    GDK_BACKEND        = "wayland";
-    QT_QPA_PLATFORM    = "wayland";
-    QT_QPA_PLATFORMTHEME = "gtk3";
-    NH_FLAKE = "/home/tima/nixos";
+    XDG_SESSION_TYPE = "wayland";
+    GDK_BACKEND     = "wayland";
+    QT_QPA_PLATFORM = "wayland";
+
+    FLAKE = "/home/tima/nixos";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
