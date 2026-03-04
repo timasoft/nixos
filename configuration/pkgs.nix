@@ -7,13 +7,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # unstable.hyprland
-    # unstable.waybar
-    hyprland
-    waybar
     swaybg
     hyprshot
-    hyprlock
     zoxide
     vulkan-tools
     ly
@@ -28,7 +23,6 @@
     upower
     swaynotificationcenter
     kitty
-    wofi
     mc
     fzf
     yazi
@@ -45,7 +39,6 @@
     nftables
     neovim
     fishPlugins.tide
-    hyprland-qt-support
     hyprsysteminfo
     gpu-screen-recorder-gtk
     libqalculate
@@ -59,16 +52,18 @@
     ripgrep
     nix-output-monitor
     nvd
-    # unstable.hyprviz
     hyprviz
+    unstable.niri
+    xdg-desktop-portal-gnome
+    xwayland-satellite
+    cava
+    unstable.opencode
   ];
 
   fonts.packages = with pkgs; [
     monocraft
     nerd-fonts.symbols-only
   ];
-
-  programs.hyprland.enable = true;
 
   programs.firefox.enable = true;
 

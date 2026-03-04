@@ -6,6 +6,14 @@
 
     globals.mapleader = ";";
 
+    autoCmd = [
+      {
+        event = [ "FileType" ];
+        pattern = [ "nix" ];
+        command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab";
+      }
+    ];
+
     plugins.treesitter = {
       enable = true;
       settings = {
@@ -37,7 +45,6 @@
     ];
 
     extraPlugins = with pkgs.vimPlugins; [
-      context-vim
       neo-tree-nvim
       lazygit-nvim
       telescope-nvim
@@ -57,11 +64,10 @@
       coc-pyright
       coc-rust-analyzer
       coc-clangd
-      coc-tsserver
+      # coc-tsserver
       coc-yaml
       coc-toml
       minimap-vim
-      llama-vim
       indent-blankline-nvim
     ];
 
@@ -74,7 +80,7 @@
       vim.g.minimap_highlight_search = 1
       vim.g.minimap_auto_start = 1
       vim.g.rustfmt_autosave = 1
-      vim.o.guifont = "Monocraft Nerd Font:h10"
+      vim.o.guifont = "Monocraft:h11"
 
       vim.opt.termguicolors = true
       vim.wo.number = true

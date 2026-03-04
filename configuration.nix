@@ -13,6 +13,8 @@
       ./configuration/tlp.nix
       ./configuration/plymouth.nix
       ./configuration/nh.nix
+      ./configuration/syncthing.nix
+      ./configuration/niri.nix
     ];
 
   hardware.graphics = {
@@ -78,6 +80,13 @@
 
   security.polkit.enable = true;
 
+  security.wrappers.btop = {
+    owner = "root";
+    group = "root";
+    capabilities = "cap_perfmon=ep";
+    source = "${pkgs.btop-cuda}/bin/btop";
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "ru";
@@ -96,16 +105,13 @@
   environment.variables.EDITOR = "nvim";
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.sessionVariables.QML_IMPORT_PATH = "${pkgs.hyprland-qt-support}/lib/qt-6/qml";
 
   environment.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE    = "wayland";
-    GDK_BACKEND        = "wayland";
-    QT_QPA_PLATFORM    = "wayland";
-    QT_QPA_PLATFORMTHEME = "gtk3";
-    NH_FLAKE = "/home/tima/nixos";
+    XDG_SESSION_TYPE = "wayland";
+    GDK_BACKEND     = "wayland";
+    QT_QPA_PLATFORM = "wayland";
+
+    FLAKE = "/home/tima/nixos";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -115,10 +121,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  programs.hyprland = {
-    xwayland.enable = true;
-  };
 
   # List services that you want to enable:
 

@@ -6,13 +6,10 @@
     # neovide
     ghfetch
     onefetch
-    # yandex-music
+    yandex-music
     telegram-desktop
-    # prismlauncher
-    # unstable.discord
-    # unstable.betterdiscordctl
-    # nvtopPackages.nvidia
     libreoffice
+    tauon
   ];
 
   programs.lazygit.enable = true;

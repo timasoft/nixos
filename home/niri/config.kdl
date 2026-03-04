@@ -1,0 +1,412 @@
+// ==================== INPUT ====================
+input {
+    keyboard {
+        xkb {
+            layout "us,ru"
+            options "grp:alt_shift_toggle"
+        }
+        numlock
+        repeat-delay 600
+        repeat-rate 25
+    }
+
+    touchpad {
+        tap
+        dwt
+        drag true
+        drag-lock
+        click-method "clickfinger"
+    }
+
+    warp-mouse-to-focus
+
+    focus-follows-mouse
+}
+
+// ==================== OUTPUTS ====================
+output "eDP-1" {
+    mode "1920x1080@144.002"
+    focus-at-startup
+}
+
+// ==================== LAYOUT ====================
+layout {
+    gaps 12
+
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 0.35
+        proportion 0.55
+        proportion 0.75
+    }
+
+    default-column-width { proportion 0.55; }
+
+    focus-ring {
+        width 2
+        active-gradient from="#9933cc90" to="#cc55ff90" angle=45
+        inactive-color "#59595959"
+        urgent-color "#9b0000"
+    }
+
+    shadow {
+        on
+        softness 6
+        spread 5
+        offset x=0 y=0
+        color "#1a1a1aee"
+    }
+
+    insert-hint {
+        color "#aaaaaa45"
+    }
+
+    struts {
+        left -10
+        right -10
+        top -10
+        bottom -10
+    }
+
+    background-color "transparent"
+}
+
+// ==================== DECORATIONS ====================
+prefer-no-csd
+
+// ==================== ENVIRONMENT ====================
+environment {
+    MOZ_ENABLE_WAYLAND "1"
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
+}
+
+// ==================== CURSOR ====================
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    hide-after-inactive-ms 10000
+}
+
+// ==================== SCREENSHOTS ====================
+screenshot-path "~/Изображения/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// ==================== OVERVIEW ====================
+overview {
+    zoom 0.55
+}
+
+// ==================== HOTKEY OVERLAY ====================
+hotkey-overlay {
+    skip-at-startup
+}
+
+// ==================== BLUR ====================
+blur {
+    passes 1
+    offset 3
+}
+
+// ==================== ANIMATIONS ====================
+animations {
+    window-open {
+        duration-ms 400
+        curve "cubic-bezier" 0.175 0.885 0.5 1.2
+    }
+    workspace-switch {
+        duration-ms 400
+        curve "cubic-bezier" 0.175 0.885 0.5 1.2
+    }
+    horizontal-view-movement {
+        duration-ms 400
+        curve "cubic-bezier" 0.175 0.885 0.5 1.2
+    }
+    window-movement {
+        duration-ms 400
+        curve "cubic-bezier" 0.175 0.885 0.5 1.2
+    }
+    window-resize {
+        duration-ms 400
+        curve "cubic-bezier" 0.175 0.885 0.5 1.2
+    }
+    config-notification-open-close {
+        duration-ms 400
+        curve "cubic-bezier" 0.175 0.885 0.5 1.2
+    }
+    exit-confirmation-open-close {
+        duration-ms 400
+        curve "cubic-bezier" 0.175 0.885 0.5 1.2
+    }
+    overview-open-close {
+        duration-ms 400
+        curve "cubic-bezier" 0.175 0.885 0.5 1.2
+    }
+    recent-windows-close {
+        duration-ms 400
+        curve "cubic-bezier" 0.175 0.885 0.5 1.2
+    }
+}
+
+// ==================== WINDOW RULES ====================
+
+window-rule {
+    match is-focused=false
+    opacity 0.95
+}
+
+window-rule {
+    background-effect {
+        blur true
+        xray false
+    }
+    draw-border-with-background false
+    open-fullscreen false
+    popups {
+        opacity 0.75
+        background-effect {
+            blur true
+        }
+    }
+}
+
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id=r#"^(discord|com\.discordapp\.Discord)$"# is-focused=true
+    opacity 0.95
+}
+window-rule {
+    match app-id=r#"^(discord|com\.discordapp\.Discord)$"# is-focused=false
+    opacity 0.9
+}
+window-rule {
+    match app-id=r#"^vesktop$"# is-focused=true
+    opacity 0.95
+}
+window-rule {
+    match app-id=r#"^vesktop$"# is-focused=false
+    opacity 0.9
+}
+
+window-rule {
+    match app-id=r#"^org\.pulseaudio\.pavucontrol$"#
+    open-floating true
+    default-floating-position x=2 y=3 relative-to="bottom-right"
+}
+window-rule {
+    match app-id=r#"^org\.pulseaudio\.pavucontrol$"# is-focused=true
+    opacity 0.75
+}
+window-rule {
+    match app-id=r#"^org\.pulseaudio\.pavucontrol$"# is-focused=false
+    opacity 0.71
+}
+
+// ==================== LAYER RULES ====================
+layer-rule {
+    background-effect {
+        xray false
+    }
+    place-within-backdrop true
+}
+
+// ==================== GESTURES ====================
+gestures {
+    hot-corners {
+        bottom-left
+    }
+}
+
+// ==================== RECENT WINDOWS ====================
+recent-windows {
+    debounce-ms 0
+
+    open-delay-ms 150
+
+    highlight {
+        active-color "#cc55ff90"
+        urgent-color "#ff999999"
+        padding 15
+        corner-radius 5
+    }
+
+    previews {
+        max-height 640
+        max-scale 0.5
+    }
+
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+        Alt+grave       { next-window     filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+        Mod+grave       { next-window     filter="app-id"; }
+        Mod+Shift+grave { previous-window filter="app-id"; }
+    }
+}
+
+// ==================== KEY BINDINGS ====================
+binds {
+    // ======== LAUNCH ========
+    Mod+A hotkey-overlay-title="kitty" { spawn "kitty"; }
+    Mod+D hotkey-overlay-title="wofi drun" { spawn "wofi" "--show" "drun"; }
+    Mod+Shift+D hotkey-overlay-title="wofi run" { spawn "wofi" "--show" "run"; }
+    Mod+X hotkey-overlay-title="power menu" { spawn "wofi-power-menu"; }
+    Mod+period hotkey-overlay-title="emoji" { spawn "wofi-emoji"; }
+    Mod+C hotkey-overlay-title="calc" { spawn-sh "~/.config/niri/wofi-calc.sh"; }
+    Mod+N hotkey-overlay-title="noctalia" { spawn "noctalia-shell"; }
+
+    // ======== CLIPBOARD ========
+    Mod+V hotkey-overlay-title="Clipboard" { spawn-sh "cliphist list | wofi --dmenu --cache-file=/dev/null | cliphist decode | wl-copy"; }
+    Mod+Shift+V hotkey-overlay-title="Clipboard with swappy" { spawn-sh "cliphist list | wofi --dmenu --cache-file=/dev/null | cliphist decode | swappy -f -"; }
+
+    // ======== SCREENSHOTS ========
+    Insert { screenshot; }
+    Ctrl+Insert { screenshot-screen; }
+    Alt+Insert { screenshot-window show-pointer=true; }
+
+    // ======== FULLSCREEN & FLOAT ========
+    Mod+F { fullscreen-window; }
+    Mod+Shift+F { maximize-column; }
+    Mod+G { toggle-window-floating; }
+
+    // ======== TABBED ========
+    Mod+T { toggle-column-tabbed-display; }
+
+    // ======== PRESET WIDTH ========
+    Mod+W { switch-preset-column-width; }
+
+    // ======== CLOSE ========
+    Mod+Q repeat=false { close-window; }
+
+    // ======== LOCK ========
+    Mod+L hotkey-overlay-title="Lock" { spawn-sh "hyprlock & sleep 3 && niri msg action power-off-monitors"; }
+
+    // ======== KILL QUICKSHELL / SWAYNC ========
+    Mod+Shift+N hotkey-overlay-title="Kill quickshell and swaync" { spawn-sh "killall .quickshell-wra & killall .swaync-wrapped"; }
+
+    // ======== SYSTEM ========
+    Mod+Shift+E { quit; }
+    Mod+Shift+S hotkey-overlay-title="Poweroff" { spawn "systemctl" "poweroff"; }
+    Mod+Shift+R hotkey-overlay-title="Reboot" { spawn "systemctl" "reboot"; }
+    Mod+Shift+H hotkey-overlay-title="Hibernate" { spawn "systemctl" "hibernate"; }
+
+    // ======== OVERVIEW ========
+    Mod+O repeat=false { toggle-overview; }
+
+    // ======== CONSUME / EXPEL WINDOWS ========
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Comma        { consume-window-into-column; }
+    Mod+Shift+Comma { expel-window-from-column; }
+
+    // ======== MEDIA KEYS ========
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute        allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+    XF86AudioPlay allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
+    XF86AudioPrev allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "previous"; }
+    XF86AudioNext allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "next"; }
+
+    // ======== FOCUS NAVIGATION: arrows ========
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+
+    // ======== MOVE COLUMN / WINDOW: Mod+Shift+arrows ========
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Up    { move-window-up; }
+    Mod+Shift+Down  { move-window-down; }
+
+    // ======== MOVE COLUMN TO MONITOR: Mod+Ctrl+arrows ========
+    Mod+Ctrl+Left  { focus-monitor-left; }
+    Mod+Ctrl+Right { focus-monitor-right; }
+    Mod+Ctrl+Up    { focus-monitor-up; }
+    Mod+Ctrl+Down  { focus-monitor-down; }
+
+    // ======== FOCUS TO MONITOR: Mod+Shift+Ctrl+arrows ========
+    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
+
+    // ======== WORKSPACE SWITCH: Mod+PageDown/Up ========
+    Mod+Page_Down { focus-workspace-down; }
+    Mod+Page_Up   { focus-workspace-up; }
+
+    // ======== MOVE COLUMN TO WORKSPACE: Mod+Shift+PageDown/Up ========
+    Mod+Shift+Page_Down { move-column-to-workspace-down; }
+    Mod+Shift+Page_Up   { move-column-to-workspace-up; }
+
+    // ======== MOVE WORKSPACE: Mod+Ctrl+PageDown/Up ========
+    Mod+Ctrl+Page_Down { move-workspace-down; }
+    Mod+Ctrl+Page_Up   { move-workspace-up; }
+
+    // ======== WORKSPACE 1-10: FOCUS & MOVE ========
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
+
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+    Mod+Shift+0 { move-column-to-workspace 10; }
+
+    // ======== SCROLL THROUGH WORKSPACES ========
+    Mod+TouchpadScrollDown cooldown-ms=300 { focus-workspace-down; }
+    Mod+TouchpadScrollUp   cooldown-ms=300 { focus-workspace-up; }
+    Mod+WheelScrollDown cooldown-ms=300 { focus-workspace-down; }
+    Mod+WheelScrollUp   cooldown-ms=300 { focus-workspace-up; }
+    Mod+Shift+TouchpadScrollDown cooldown-ms=300 { move-column-to-workspace-down; }
+    Mod+Shift+TouchpadScrollUp   cooldown-ms=300 { move-column-to-workspace-up; }
+    Mod+Shift+WheelScrollDown cooldown-ms=300 { move-column-to-workspace-down; }
+    Mod+Shift+WheelScrollUp   cooldown-ms=300 { move-column-to-workspace-up; }
+
+    // ======== SCROLL HORIZONTAL (column focus) ========
+    Mod+TouchpadScrollRight cooldown-ms=300 { focus-column-right; }
+    Mod+TouchpadScrollLeft  cooldown-ms=300 { focus-column-left; }
+    Mod+WheelScrollRight { focus-column-right; }
+    Mod+WheelScrollLeft  { focus-column-left; }
+    Mod+Shift+TouchpadScrollRight cooldown-ms=300 { move-column-right; }
+    Mod+Shift+TouchpadScrollLeft  cooldown-ms=300 { move-column-left; }
+    Mod+Shift+WheelScrollRight { move-column-right; }
+    Mod+Shift+WheelScrollLeft  { move-column-left; }
+
+    // ======== CTRL+SCROLL (column focus) ========
+    Mod+Ctrl+TouchpadScrollDown cooldown-ms=300 { focus-column-right; }
+    Mod+Ctrl+TouchpadScrollUp   cooldown-ms=300 { focus-column-left; }
+    Mod+Ctrl+Shift+TouchpadScrollDown cooldown-ms=300 { move-column-right; }
+    Mod+Ctrl+Shift+TouchpadScrollUp   cooldown-ms=300 { move-column-left; }
+    Mod+Ctrl+WheelScrollDown { focus-column-right; }
+    Mod+Ctrl+WheelScrollUp   { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+
+    // ======== CENTER COLUMN ========
+    Mod+Shift+C { center-column; }
+
+    // ======== HOTKEY OVERLAY ========
+    Mod+Slash { show-hotkey-overlay; }
+}
