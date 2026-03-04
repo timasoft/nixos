@@ -43,7 +43,7 @@
     nftables
     neovim
     flatpak
-    fishPlugins.tide
+    unstable.fishPlugins.tide
     hyprland-qt-support
     hyprsysteminfo
     gpu-screen-recorder-gtk
@@ -72,7 +72,10 @@
 
   programs.firefox.enable = true;
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    package = unstable.fish;
+  };
 
   programs.steam = {
     enable = true;
