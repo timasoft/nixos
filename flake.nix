@@ -10,6 +10,8 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     declair-rs.url = "github:timasoft/declair-rs";
     dw-proton.url = "github:imaviso/dwproton-flake";
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -21,6 +23,7 @@
     stylix,
     declair-rs,
     dw-proton,
+    nix-index-database,
     ...
   }:
   let
@@ -32,6 +35,8 @@
       inherit system;
       modules = [
         ./configuration.nix
+        nix-index-database.nixosModules.default
+        { programs.nix-index-database.comma.enable = true; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
