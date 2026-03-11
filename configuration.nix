@@ -104,7 +104,6 @@
     XDG_SESSION_TYPE    = "wayland";
     GDK_BACKEND        = "wayland";
     QT_QPA_PLATFORM    = "wayland";
-    QT_QPA_PLATFORMTHEME = "gtk3";
 
     FLAKE = "/home/tima/nixos";
   };
