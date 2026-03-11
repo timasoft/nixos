@@ -61,6 +61,7 @@
     nix-output-monitor
     nvd
     unstable.hyprviz
+    jdk21
   ];
 
   fonts.packages = with pkgs; [
