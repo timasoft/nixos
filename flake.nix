@@ -8,7 +8,7 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:nix-community/stylix/release-25.11";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
-    declair-rs.url = "github:timasoft/declair-rs";
+    # declair-rs.url = "github:timasoft/declair-rs";
     dw-proton.url = "github:imaviso/dwproton-flake";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +21,7 @@
     home-manager,
     nixvim,
     stylix,
-    declair-rs,
+    # declair-rs,
     dw-proton,
     nix-index-database,
     ...
@@ -42,11 +42,11 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
         }
-        {
-          environment.systemPackages = [
-            declair-rs.packages.${system}.default
-          ];
-        }
+        # {
+        #   environment.systemPackages = [
+        #     declair-rs.packages.${system}.default
+        #   ];
+        # }
         {
           programs.steam.extraCompatPackages = [
             dw-proton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
