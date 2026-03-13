@@ -11,7 +11,7 @@ in
 
     redisCreateLocally = true;
 
-    runInUwsgi = false;
+    configureUwsgi = false;
 
     settings = {
       server = {
@@ -21,6 +21,7 @@ in
         public_instance = false;
         image_proxy = true;
         secret_key = secret;
+        limiter = false;
       };
 
       general = {
@@ -32,6 +33,16 @@ in
         formats = [ "html" "json" "rss" ];
         autocomplete = "duckduckgo";
       };
+
+      engines = [
+        { name = "bing"; categories = [ "general" ]; disabled = false; }
+        { name = "wikipedia"; categories = [ "general" ]; disabled = false; }
+        { name = "wikidata"; categories = [ "general" ]; disabled = false; }
+        { name = "duckduckgo"; categories = [ "general" ]; disabled = false; }
+
+        { name = "brave"; disabled = true; }
+        { name = "startpage"; disabled = true; }
+      ];
     };
   };
 }

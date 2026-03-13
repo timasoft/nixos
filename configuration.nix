@@ -10,10 +10,8 @@
       ./hardware-configuration.nix
       ./configuration/fileSystems.nix
       ./configuration/nvidia.nix
-      ./configuration/ollama.nix
       ./configuration/homepage.nix
       ./configuration/searx.nix
-      ./configuration/llama-cpp.nix
       ./configuration/pkgs.nix
       ./configuration/v4l2loopback.nix
       ./configuration/printing.nix

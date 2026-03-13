@@ -62,6 +62,7 @@
     nvd
     unstable.hyprviz
     jdk21
+    unstable.llamaPackages.llama-cpp
   ];
 
   fonts.packages = with pkgs; [

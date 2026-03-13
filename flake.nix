@@ -12,6 +12,8 @@
     dw-proton.url = "github:imaviso/dwproton-flake";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    llama-cpp.url = "github:ggml-org/llama.cpp";
+    llama-cpp.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -24,12 +26,26 @@
     # declair-rs,
     dw-proton,
     nix-index-database,
+    llama-cpp,
     ...
   }:
   let
     system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
-    unstablePkgs = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+      config.cudaSupport = true;
+      config.cudaCapabilities = [ "7.5" ];
+    };
+    unstablePkgs = import nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+      config.cudaSupport = true;
+      config.cudaCapabilities = [ "7.5" ];
+      overlays = [
+        llama-cpp.overlays.default
+      ];
+    };
   in {
     nixosConfigurations.timofey = nixpkgs.lib.nixosSystem {
       inherit system;
