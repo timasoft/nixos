@@ -17,6 +17,8 @@
       ./configuration/printing.nix
       ./configuration/plymouth.nix
       ./configuration/nh.nix
+      ./configuration/llama-server.nix
+      ./configuration/mcp-secure-exec.nix
       # ./zapret.nix
     ];
 
@@ -91,6 +93,10 @@
     shell = "${pkgs.fish}/bin/fish";
   };
 
+  systemd.tmpfiles.rules = [
+    "d /home/tima 0711 tima users -"
+  ];
+
   environment.variables.EDITOR = "nvim";
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -134,6 +140,8 @@
 
   services.hardware.openrgb.enable = true;
   # services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
+
+  services.llama-server.enable = true;
 
   services.gvfs.enable = true;
   services.udisks2.enable = true;
