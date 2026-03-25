@@ -19,6 +19,7 @@
       ./configuration/nh.nix
       ./configuration/llama-server.nix
       ./configuration/mcp-secure-exec.nix
+      ./configuration/unsloth-studio.nix
       # ./zapret.nix
     ];
 
@@ -142,6 +143,8 @@
   # services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
 
   services.llama-server.enable = true;
+
+  services.unsloth-studio.enable = true;
 
   services.gvfs.enable = true;
   services.udisks2.enable = true;
