@@ -1,7 +1,7 @@
 { config, unstable, ... }:
 
 let
-  baseUrl = "http://10.1.1.195:8888";
+  baseUrl = "http://0.0.0.0:8888";
   secret = builtins.hashString "sha256" (toString config.networking.hostId);
 in
 {
