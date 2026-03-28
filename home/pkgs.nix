@@ -6,7 +6,7 @@
     neovide
     ghfetch
     onefetch
-    # yandex-music
+    yandex-music
     telegram-desktop
     prismlauncher
     unstable.discord
@@ -14,6 +14,8 @@
     nvtopPackages.nvidia
     libreoffice
     git-lfs
+    gimp
+    kdePackages.kdenlive
   ];
 
   programs.obs-studio.enable = true;
