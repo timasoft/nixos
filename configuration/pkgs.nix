@@ -8,7 +8,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     unstable.hyprland
-    unstable.waybar
     swaybg
     hyprshot
     hyprlock
@@ -83,6 +82,9 @@
     enable = true;
     remotePlay.openFirewall = true;
     gamescopeSession.enable = true;
+    extraCompatPackages = [
+      pkgs.proton-ge-bin
+    ];
   };
 
   programs.gamescope = {

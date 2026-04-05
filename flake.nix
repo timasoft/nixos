@@ -8,7 +8,7 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:nix-community/stylix/release-25.11";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
-    dw-proton.url = "github:imaviso/dwproton-flake";
+    # dw-proton.url = "github:imaviso/dwproton-flake";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     llama-cpp.url = "github:ggml-org/llama.cpp";
@@ -23,7 +23,7 @@
     home-manager,
     nixvim,
     stylix,
-    dw-proton,
+    # dw-proton,
     nix-index-database,
     llama-cpp,
     mcp-secure-exec,
@@ -58,11 +58,11 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
         }
-        {
-          programs.steam.extraCompatPackages = [
-            dw-proton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
-          ];
-        }
+        # {
+        #   programs.steam.extraCompatPackages = [
+        #     dw-proton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
+        #   ];
+        # }
         mcp-secure-exec.nixosModules.mcp-secure-exec
       ];
       specialArgs = {
@@ -77,7 +77,7 @@
         unstable = unstablePkgs;
       };
       modules = [
-        nixvim.homeManagerModules.nixvim
+        nixvim.homeModules.nixvim
         stylix.homeModules.stylix
         ./home.nix
       ];
