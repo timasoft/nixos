@@ -13,5 +13,6 @@
     ./home/pkgs.nix
     ./home/git.nix
     ./home/stylix.nix
+    ./home/noctalia.nix
   ];
 }
