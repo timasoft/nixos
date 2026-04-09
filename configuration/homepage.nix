@@ -158,8 +158,8 @@
           {
             "LLaMa.cpp" = {
               description = "LLaMa.cpp Web UI";
-              href = "http://10.1.1.195:8012";
-              icon = "http://10.1.1.195:8012/favicon.ico";
+              href = "http://10.1.1.195:8088";
+              icon = "http://10.1.1.195:8088/favicon.ico";
             };
           }
           {

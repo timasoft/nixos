@@ -3,7 +3,7 @@
 let
   llamaServer = "${unstable.llamaPackages.llama-cpp}/bin/llama-server";
 
-  nvidiaUtils = config.hardware.nvidia.package.out;
+  nvidiaSmiPath = "${config.hardware.nvidia.package.bin}/bin/nvidia-smi";
 
   llamaScript = pkgs.writeShellScriptBin "llama-cpp" ''
     #!/bin/bash
@@ -11,8 +11,7 @@ let
     REQUIRED_VRAM_MB="''${REQUIRED_VRAM_MB:-8000}"
     MODEL_PATH="''${MODEL_PATH}"
     MMPROJ_PATH="''${MMPROJ_PATH}"
-
-    export PATH="${nvidiaUtils}/bin:$PATH"
+    NVIDIA_SMI="''${NVIDIA_SMI_BIN:-nvidia-smi}"
 
     if [ ! -f "$MODEL_PATH" ]; then
       echo "Error: Model file not found at $MODEL_PATH"
@@ -24,7 +23,7 @@ let
       --mmproj "$MMPROJ_PATH"
       --n-gpu-layers 99
       --host 0.0.0.0
-      --port 8012
+      --port 8088
       --temp 0.2
       --top-p 0.95
       --top-k 40
@@ -43,15 +42,15 @@ let
       exec ${llamaServer} "''${ARGS[@]}"
     }
 
-    if ! command -v nvidia-smi &> /dev/null; then
-      echo "nvidia-smi not found, launching without VRAM check..."
+    if [ ! -x "$NVIDIA_SMI" ]; then
+      echo "nvidia-smi not found at $NVIDIA_SMI, launching without VRAM check..."
       launch_server
     fi
 
     echo "Waiting for VRAM availability (''${REQUIRED_VRAM_MB} MB)..."
 
     while true; do
-      FREE_VRAM=$(nvidia-smi --query-gpu=memory.free --format=csv,noheader,nounits 2>/dev/null | head -n 1)
+      FREE_VRAM=$("$NVIDIA_SMI" --query-gpu=memory.free --format=csv,noheader,nounits 2>/dev/null | head -n 1)
 
       if [ -z "$FREE_VRAM" ]; then
         echo "Could not read VRAM, launching anyway..."
@@ -109,6 +108,7 @@ in
           "MODEL_PATH=${config.services.llama-server.modelPath}"
           "MMPROJ_PATH=${config.services.llama-server.mmprojPath}"
           "REQUIRED_VRAM_MB=${toString config.services.llama-server.requiredVram}"
+          "NVIDIA_SMI_BIN=${nvidiaSmiPath}"
         ] ++ lib.optional (config.hardware.nvidia.enabled)
           "LD_LIBRARY_PATH=${lib.makeLibraryPath [ config.hardware.nvidia.package.out ]}";
 

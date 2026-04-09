@@ -39,7 +39,7 @@ in
 
     llamaServerUrl = lib.mkOption {
       type = lib.types.str;
-      default = "http://127.0.0.1:8012";
+      default = "http://127.0.0.1:8088";
       description = "URL of the llama-server instance";
     };
   };
