@@ -8,7 +8,7 @@
     onefetch
     yandex-music
     telegram-desktop
-    prismlauncher
+    unstable.prismlauncher
     unstable.discord
     unstable.betterdiscordctl
     nvtopPackages.nvidia
