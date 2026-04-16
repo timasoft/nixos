@@ -182,6 +182,13 @@
                             "usePadding": true
                         },
                         {
+                            "displayMode": "forceOpen",
+                            "iconColor": "none",
+                            "id": "KeyboardLayout",
+                            "showIcon": true,
+                            "textColor": "none"
+                        },
+                        {
                             "blacklist": [
                             ],
                             "chevronColor": "none",
@@ -305,6 +312,13 @@
                     "textColor": "none",
                     "useMonospaceFont": true,
                     "usePadding": true
+                },
+                {
+                    "displayMode": "forceOpen",
+                    "iconColor": "none",
+                    "id": "KeyboardLayout",
+                    "showIcon": true,
+                    "textColor": "none"
                 },
                 {
                     "blacklist": [
