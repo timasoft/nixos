@@ -28,6 +28,7 @@ let
       --top-p 0.95
       --top-k 40
       --min-p 0.05
+      --repeat-penalty 1.15
       --ctx-size 131072
       --parallel 2
       --flash-attn on
