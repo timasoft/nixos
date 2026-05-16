@@ -14,6 +14,8 @@
     llama-cpp.url = "github:ggml-org/llama.cpp";
     llama-cpp.inputs.nixpkgs.follows = "nixpkgs";
     mcp-secure-exec.url = "github:timasoft/mcp-secure-exec";
+    comfy.url = "github:utensils/comfyui-nix";
+    comfy.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -27,6 +29,7 @@
     nix-index-database,
     llama-cpp,
     mcp-secure-exec,
+    comfy,
     ...
   }:
   let
@@ -44,6 +47,7 @@
       config.cudaCapabilities = [ "7.5" ];
       overlays = [
         llama-cpp.overlays.default
+        comfy.overlays.default
       ];
     };
   in {
@@ -64,6 +68,7 @@
         #   ];
         # }
         mcp-secure-exec.nixosModules.mcp-secure-exec
+        comfy.nixosModules.default
       ];
       specialArgs = {
         unstable = unstablePkgs;

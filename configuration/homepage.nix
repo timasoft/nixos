@@ -164,7 +164,7 @@
           }
           {
             "ComfyUI" = {
-              description = "Needs manual start";
+              description = "Node-based SD GUI";
               href = "http://10.1.1.195:8188";
               icon = "http://10.1.1.195:8188/favicon.ico";
             };
