@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, ... }:
+{ config, pkgs, unstable, ambiwayPkg, cavaBgPkg, ... }:
 
 {
   home.packages = with pkgs; [
@@ -10,12 +10,15 @@
     telegram-desktop
     unstable.prismlauncher
     unstable.discord
-    unstable.betterdiscordctl
+    unstable.vesktop
+    # unstable.betterdiscordctl
     nvtopPackages.nvidia
     libreoffice
     git-lfs
     gimp
     kdePackages.kdenlive
+    ambiwayPkg
+    cavaBgPkg
   ];
 
   programs.obs-studio.enable = true;
