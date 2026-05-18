@@ -21,6 +21,7 @@
       ./configuration/mcp-secure-exec.nix
       ./configuration/unsloth-studio.nix
       ./configuration/comfyui.nix
+      ./configuration/virtualization.nix
       # ./zapret.nix
     ];
 
@@ -90,7 +91,7 @@
   users.users.tima = {
     isNormalUser = true;
     description = "timofey";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm" ];
     packages = with pkgs; [];
     shell = "${pkgs.fish}/bin/fish";
   };

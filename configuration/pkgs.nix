@@ -62,6 +62,7 @@
     unstable.hyprviz
     jdk21
     cava
+    virt-manager
     unstable.llamaPackages.llama-cpp
     unstable.opencode
   ];
