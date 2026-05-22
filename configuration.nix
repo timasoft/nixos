@@ -22,6 +22,7 @@
       ./configuration/unsloth-studio.nix
       ./configuration/comfyui.nix
       ./configuration/virtualization.nix
+      ./configuration/syncthing.nix
       # ./zapret.nix
     ];
 
