@@ -17,6 +17,7 @@
     git-lfs
     gimp
     kdePackages.kdenlive
+    tauon
     ambiwayPkg
     cavaBgPkg
   ];
