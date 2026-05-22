@@ -48,10 +48,10 @@
       config.cudaCapabilities = [ "7.5" ];
     };
     ui-assets = {
-      index      = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9190/index.html";     sha256 = "1wsapkb24yhh51zqs93s4izy6nhm2blxk15d64pwqvj5d6n6v99y"; };
-      bundle_js  = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9190/bundle.js";     sha256 = "0yh4q4hz6w1q2fhz5kzs3wini0pzld8y1aswlqj6gmhz2fm5iagr"; };
-      bundle_css = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9190/bundle.css";   sha256 = "0yy16qyp0zcgwl6vfbzwrvjd25fj0rvkvamm04f3ar9jx9bd9caf"; };
-      loading    = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9190/loading.html"; sha256 = "1p1wf1xrwbc66c6s7cj7pf5ba1v1kw0mv3xj2s6m30db75z0a015"; };
+      index      = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/index.html";     sha256 = "1wsapkb24yhh51zqs93s4izy6nhm2blxk15d64pwqvj5d6n6v99y"; };
+      bundle_js  = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/bundle.js";     sha256 = "1vgbn1wy94q3bv0r9d0xv6chj08h48zckvn8sjjdqzxi6friqh30"; };
+      bundle_css = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/bundle.css";   sha256 = "14vyn8kgz62dwvmy1vngs7yyq7m29z16r8vxrnfc6x9zx5gwpgq2"; };
+      loading    = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/loading.html"; sha256 = "1p1wf1xrwbc66c6s7cj7pf5ba1v1kw0mv3xj2s6m30db75z0a015"; };
     };
     llama-cpp-fix-overlay = final: prev: {
       llamaPackages = prev.llamaPackages // {
