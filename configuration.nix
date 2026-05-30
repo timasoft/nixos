@@ -23,6 +23,7 @@
       ./configuration/comfyui.nix
       ./configuration/virtualization.nix
       ./configuration/syncthing.nix
+      ./configuration/niri.nix
       # ./zapret.nix
     ];
 
@@ -107,11 +108,9 @@
   environment.sessionVariables.QML_IMPORT_PATH = "${pkgs.hyprland-qt-support}/lib/qt-6/qml";
 
   environment.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE    = "wayland";
-    GDK_BACKEND        = "wayland";
-    QT_QPA_PLATFORM    = "wayland";
+    XDG_SESSION_TYPE = "wayland";
+    GDK_BACKEND     = "wayland";
+    QT_QPA_PLATFORM = "wayland";
 
     FLAKE = "/home/tima/nixos";
   };

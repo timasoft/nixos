@@ -60,6 +60,9 @@
     nix-output-monitor
     nvd
     unstable.hyprviz
+    unstable.niri
+    xdg-desktop-portal-gnome
+    xwayland-satellite
     jdk21
     cava
     virt-manager
