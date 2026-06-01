@@ -9,11 +9,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779781925,
-        "narHash": "sha256-ZLyRp3oLBKL0wUx2h+Cp+2eE4lwf1zi9cSWwQyF6EA8=",
+        "lastModified": 1780339949,
+        "narHash": "sha256-YFkDytngeV+xy2I4Cnf37KjSANxAStQqvrQj4K4dtbE=",
         "owner": "timasoft",
         "repo": "ambiway",
-        "rev": "2d5fba34b3e1c19f4f0d0ac9d6d7ad6192ac9cd9",
+        "rev": "58e2cc223e315fbe80fa7e31466fa18addd6028b",
         "type": "github"
       },
       "original": {
@@ -461,11 +461,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780333610,
-        "narHash": "sha256-8rHMr2JvUc6uNJ6bnYm9iAF0pt5wF0P1HKHd4qTOASg=",
+        "lastModified": 1780336886,
+        "narHash": "sha256-KFX4skwwBjmTTPeLcs5cpxsNS89oekjWp1FeSZcE+as=",
         "owner": "ggml-org",
         "repo": "llama.cpp",
-        "rev": "27d9ed839713e31c7a0ba45e342109a04549834f",
+        "rev": "5aa3a64596a1dc67a5aeb55dbd3d743f4d84126c",
         "type": "github"
       },
       "original": {
@@ -502,11 +502,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1763384566,
-        "narHash": "sha256-r+wgI+WvNaSdxQmqaM58lVNvJYJ16zoq+tKN20cLst4=",
+        "lastModified": 1778151388,
+        "narHash": "sha256-lldMJPUeouEjO8/7aLuwhcsIw29vVihm2ZALzjiqfec=",
         "owner": "nix-community",
         "repo": "naersk",
-        "rev": "d4155d6ebb70fbe2314959842f744aa7cabbbf6a",
+        "rev": "efdddff9ff4d8e7d0056d57ec67dac50f75ab8f6",
         "type": "github"
       },
       "original": {
