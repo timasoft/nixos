@@ -14,5 +14,6 @@
     ./home/git.nix
     ./home/stylix.nix
     ./home/noctalia.nix
+    ./home/niri.nix
   ];
 }
