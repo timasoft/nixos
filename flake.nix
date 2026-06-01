@@ -49,10 +49,10 @@
       overlays = [ pipx-fix-overlay ];
     };
     ui-assets = {
-      index      = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/index.html";     sha256 = "1wsapkb24yhh51zqs93s4izy6nhm2blxk15d64pwqvj5d6n6v99y"; };
-      bundle_js  = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/bundle.js";     sha256 = "1vgbn1wy94q3bv0r9d0xv6chj08h48zckvn8sjjdqzxi6friqh30"; };
-      bundle_css = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/bundle.css";   sha256 = "14vyn8kgz62dwvmy1vngs7yyq7m29z16r8vxrnfc6x9zx5gwpgq2"; };
-      loading    = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/loading.html"; sha256 = "1p1wf1xrwbc66c6s7cj7pf5ba1v1kw0mv3xj2s6m30db75z0a015"; };
+      index      = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9453/index.html";     sha256 = "1wsapkb24yhh51zqs93s4izy6nhm2blxk15d64pwqvj5d6n6v99y"; };
+      bundle_js  = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9453/bundle.js";     sha256 = "1lbw2n4gv68bvh7qhvxf461qab44v94gc6wpzxr34m8lms677jyf"; };
+      bundle_css = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9453/bundle.css";   sha256 = "14vyn8kgz62dwvmy1vngs7yyq7m29z16r8vxrnfc6x9zx5gwpgq2"; };
+      loading    = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9453/loading.html"; sha256 = "1p1wf1xrwbc66c6s7cj7pf5ba1v1kw0mv3xj2s6m30db75z0a015"; };
     };
     pipx-fix-overlay = final: prev: {
       pipx = prev.pipx.overridePythonAttrs (old: {
