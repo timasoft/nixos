@@ -10,7 +10,6 @@
     unstable.hyprland
     swaybg
     hyprshot
-    hyprlock
     zoxide
     vulkan-tools
     ly
@@ -25,7 +24,6 @@
     upower
     swaynotificationcenter
     kitty
-    wofi
     mc
     fzf
     yazi
