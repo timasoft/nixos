@@ -64,7 +64,7 @@
       coc-pyright
       coc-rust-analyzer
       coc-clangd
-      coc-tsserver
+      # coc-tsserver
       coc-yaml
       coc-toml
       minimap-vim
@@ -81,7 +81,7 @@
       vim.g.minimap_highlight_search = 1
       vim.g.minimap_auto_start = 1
       vim.g.rustfmt_autosave = 1
-      vim.o.guifont = "Monocraft Nerd Font:h10"
+      vim.o.guifont = "Monocraft:h10"
 
       vim.opt.termguicolors = true
       vim.wo.number = true

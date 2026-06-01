@@ -10,7 +10,7 @@
     fonts = {
       monospace = {
         package = pkgs.monocraft;
-        name = "Monocraft Nerd Font";
+        name = "Monocraft";
       };
       sansSerif = {
         package = pkgs.monocraft;

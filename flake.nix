@@ -1,10 +1,10 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.url = "github:nix-community/nixvim/nixos-25.11";
+    nixvim.url = "github:nix-community/nixvim/nixos-26.05";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:nix-community/stylix/release-25.11";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +15,7 @@
     llama-cpp.inputs.nixpkgs.follows = "nixpkgs";
     mcp-secure-exec.url = "github:timasoft/mcp-secure-exec";
     mcp-secure-exec.inputs.nixpkgs.follows = "nixpkgs";
-    comfy.url = "github:utensils/comfyui-nix";
+    comfy.url = "github:nixified-ai/flake";
     comfy.inputs.nixpkgs.follows = "nixpkgs";
     ambiway.url = "github:timasoft/ambiway";
     ambiway.inputs.nixpkgs.follows = "nixpkgs";
@@ -46,12 +46,18 @@
       config.allowUnfree = true;
       config.cudaSupport = true;
       config.cudaCapabilities = [ "7.5" ];
+      overlays = [ pipx-fix-overlay ];
     };
     ui-assets = {
       index      = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/index.html";     sha256 = "1wsapkb24yhh51zqs93s4izy6nhm2blxk15d64pwqvj5d6n6v99y"; };
       bundle_js  = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/bundle.js";     sha256 = "1vgbn1wy94q3bv0r9d0xv6chj08h48zckvn8sjjdqzxi6friqh30"; };
       bundle_css = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/bundle.css";   sha256 = "14vyn8kgz62dwvmy1vngs7yyq7m29z16r8vxrnfc6x9zx5gwpgq2"; };
       loading    = pkgs.fetchurl { url = "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b9279/loading.html"; sha256 = "1p1wf1xrwbc66c6s7cj7pf5ba1v1kw0mv3xj2s6m30db75z0a015"; };
+    };
+    pipx-fix-overlay = final: prev: {
+      pipx = prev.pipx.overridePythonAttrs (old: {
+        doCheck = false;
+      });
     };
     llama-cpp-fix-overlay = final: prev: {
       llamaPackages = prev.llamaPackages // {
@@ -74,7 +80,7 @@
       overlays = [
         llama-cpp.overlays.default
         llama-cpp-fix-overlay
-        comfy.overlays.default
+        comfy.overlays.comfyui
       ];
     };
     ambiwayPkg = ambiway.packages.${system}.default;
@@ -97,7 +103,7 @@
         #   ];
         # }
         mcp-secure-exec.nixosModules.mcp-secure-exec
-        comfy.nixosModules.default
+        comfy.nixosModules.comfyui
       ];
       specialArgs = {
         unstable = unstablePkgs;

@@ -742,7 +742,7 @@
         "boxBorderEnabled": true,
         "fontDefault": "Monocraft",
         "fontDefaultScale": 1.1,
-        "fontFixed": "Monocraft Nerd Font",
+        "fontFixed": "Monocraft",
         "fontFixedScale": 1.1,
         "panelBackgroundOpacity": 0.9,
         "panelsAttachedToBar": true,
