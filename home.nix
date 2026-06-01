@@ -14,6 +14,7 @@
     ./home/git.nix
     ./home/stylix.nix
     ./home/noctalia.nix
+    ./home/ambiway.nix
     ./home/niri.nix
     ./home/wofi.nix
     ./home/hyprlock.nix

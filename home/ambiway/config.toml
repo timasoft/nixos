@@ -1,0 +1,24 @@
+[led]
+left = [43]
+up = [72]
+right = [43]
+down = [71]
+
+[indent]
+left_up = [0]
+left_down = [0]
+up_left = [0]
+up_right = [0]
+right_up = [0]
+right_down = [0]
+down_left = [0]
+down_right = [0]
+
+[settings]
+size = 50
+brightness = 0.25
+smooth = false
+cams = [3]
+device_id = 0
+zone_id_list = [2]
+monitor_id_list = [0]
