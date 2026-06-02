@@ -8,4 +8,5 @@ in
 
   home.file.".config/noctalia/settings.json".source = "${cfg}/settings.json";
   home.file.".config/noctalia/colorschemes/050010".source = "${cfg}/colorschemes/050010";
+  home.file.".config/noctalia/avatar.jpg".source = ../assets/avatar.jpg;
 }

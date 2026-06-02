@@ -75,7 +75,7 @@ layout {
 }
 
 // ==================== STARTUP ====================
-spawn-sh-at-startup "swaybg -i ~/Minecraft2_2k.png & noctalia-shell"
+spawn-sh-at-startup "swaybg -i ~/.config/niri/wallpaper.png & noctalia-shell"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
 spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
 spawn-sh-at-startup "sleep 3 && bluetoothctl connect FC:E8:06:B9:EF:75"

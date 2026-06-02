@@ -9,4 +9,6 @@
   xdg.configFile."niri/config.kdl" = {
     source = ./niri/config.kdl;
   };
+
+  home.file.".config/niri/wallpaper.png".source = ../assets/wallpaper.png;
 }
