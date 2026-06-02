@@ -19,7 +19,6 @@
     kdePackages.kdenlive
     tauon
     ambiwayPkg
-    cavaBgPkg
   ];
 
   programs.obs-studio.enable = true;

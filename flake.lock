@@ -99,15 +99,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1777748104,
-        "narHash": "sha256-2ITg+pHaCeEURO0YQvcNbanRFARh0IAnHDDZE7lXI2I=",
-        "owner": "leriart",
+        "lastModified": 1780429281,
+        "narHash": "sha256-AROqyrWvdb9tH5Q+eUFym3rD8TDRj8oAQ0dmUOL4Sq0=",
+        "owner": "timasoft",
         "repo": "cava-bg",
-        "rev": "8a9ca7440e5c6fc25654394cf73e15052c4cee61",
+        "rev": "3b35701b92e1c8544295de97ca9999e087c58883",
         "type": "github"
       },
       "original": {
-        "owner": "leriart",
+        "owner": "timasoft",
         "repo": "cava-bg",
         "type": "github"
       }
@@ -521,11 +521,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1776200608,
-        "narHash": "sha256-broZ6RFQr4Fv0wT73gGmzNX14A43TmTFF8g4wDKlNss=",
+        "lastModified": 1778151388,
+        "narHash": "sha256-lldMJPUeouEjO8/7aLuwhcsIw29vVihm2ZALzjiqfec=",
         "owner": "nix-community",
         "repo": "naersk",
-        "rev": "8b23250ab45c2a38cd91031aee26478ca4d0a28e",
+        "rev": "efdddff9ff4d8e7d0056d57ec67dac50f75ab8f6",
         "type": "github"
       },
       "original": {

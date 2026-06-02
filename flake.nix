@@ -19,7 +19,7 @@
     comfy.inputs.nixpkgs.follows = "nixpkgs";
     ambiway.url = "github:timasoft/ambiway";
     ambiway.inputs.nixpkgs.follows = "nixpkgs";
-    cava-bg.url = "github:leriart/cava-bg";
+    cava-bg.url = "github:timasoft/cava-bg";
     cava-bg.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -84,7 +84,6 @@
       ];
     };
     ambiwayPkg = ambiway.packages.${system}.default;
-    cavaBgPkg = cava-bg.packages.${system}.default;
   in {
     nixosConfigurations.timofey = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -114,12 +113,13 @@
     homeConfigurations.tima = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {
-        inherit ambiwayPkg cavaBgPkg;
+        inherit ambiwayPkg;
         unstable = unstablePkgs;
       };
       modules = [
         nixvim.homeModules.nixvim
         stylix.homeModules.stylix
+        cava-bg.homeManagerModules.cava-bg
         ./home.nix
       ];
     };
