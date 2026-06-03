@@ -255,6 +255,7 @@
                     "maxWidth": 512,
                     "scrollingMode": "hover",
                     "showIcon": true,
+                    "showText": true,
                     "textColor": "none",
                     "useFixedWidth": true
                 },
@@ -280,6 +281,13 @@
                     "displayMode": "alwaysShow",
                     "iconColor": "none",
                     "id": "Bluetooth",
+                    "textColor": "none"
+                },
+                {
+                    "applyToAllMonitors": false,
+                    "displayMode": "alwaysShow",
+                    "iconColor": "none",
+                    "id": "Brightness",
                     "textColor": "none"
                 },
                 {
@@ -328,6 +336,12 @@
                     "id": "Tray",
                     "pinned": [
                     ]
+                },
+                {
+                    "displayMode": "alwaysShow",
+                    "iconColor": "none",
+                    "id": "Network",
+                    "textColor": "none"
                 },
                 {
                     "hideWhenZero": false,
@@ -389,11 +403,11 @@
                 "id": "audio-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "weather-card"
             },
             {
@@ -418,6 +432,9 @@
                 },
                 {
                     "id": "NoctaliaPerformance"
+                },
+                {
+                    "id": "AirplaneMode"
                 }
             ]
         }
