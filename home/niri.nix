@@ -10,5 +10,5 @@
     source = ./niri/config.kdl;
   };
 
-  home.file.".config/niri/wallpaper.png".source = ../assets/wallpaper.jpg;
+  home.file.".config/niri/wallpaper.jpg".source = ../assets/wallpaper.jpg;
 }
