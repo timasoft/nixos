@@ -29,17 +29,24 @@
   }:
   let
     system = "x86_64-linux";
+    pipx-fix-overlay = final: prev: {
+      pipx = prev.pipx.overridePythonAttrs (old: {
+        doCheck = false;
+      });
+    };
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
       config.cudaSupport = true;
       config.cudaCapabilities = [ "8.9" ];
+      overlays = [ pipx-fix-overlay ];
     };
     unstablePkgs = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
       config.cudaSupport = true;
       config.cudaCapabilities = [ "8.9" ];
+      overlays = [ pipx-fix-overlay ];
     };
   in {
     nixosConfigurations.timabook = nixpkgs.lib.nixosSystem {
