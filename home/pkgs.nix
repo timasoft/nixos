@@ -12,7 +12,7 @@
     unstable.discord
     unstable.vesktop
     # unstable.betterdiscordctl
-    nvtopPackages.nvidia
+    # nvtopPackages.nvidia
     libreoffice
     gimp
     kdePackages.kdenlive
