@@ -41,6 +41,13 @@
   ];
   boot.kernelPackages= pkgs.linuxPackages_latest;
 
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 25;
+    priority = 100;
+  };
+
   networking.hostName = "jumper"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
