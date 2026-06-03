@@ -60,8 +60,6 @@
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
         "monitors": [
-            "DP-1",
-            "DVI-D-1"
         ],
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
@@ -767,16 +765,6 @@
         "hideWallpaperFilenames": false,
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
-            {
-                "directory": "/home/tima/Pictures/Wallpapers",
-                "name": "DVI-D-1",
-                "wallpaper": ""
-            },
-            {
-                "directory": "/home/tima/Pictures/Wallpapers",
-                "name": "DP-1",
-                "wallpaper": ""
-            }
         ],
         "overviewBlur": 0.4,
         "overviewEnabled": false,
