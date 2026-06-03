@@ -76,6 +76,13 @@
 
   security.polkit.enable = true;
 
+  security.wrappers.btop = {
+    owner = "root";
+    group = "root";
+    capabilities = "cap_perfmon=ep";
+    source = "${pkgs.btop-cuda}/bin/btop";
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "ru";
