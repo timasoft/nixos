@@ -89,6 +89,7 @@
         Description = "Sway Background";
         After = [ "graphical-session.target" ];
         PartOf = [ "graphical-session.target" ];
+        Wants = [ "cava-bg.service" ];
       };
       Service = {
         ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${config.home.file.".config/niri/wallpaper.png".source}";

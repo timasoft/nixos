@@ -1,6 +1,13 @@
 { config, pkgs, lib, ... }:
 
 {
+  systemd.user.services."cava-bg" = {
+    Unit = {
+      After = [ "swaybg.service" ];
+      PartOf = [ "swaybg.service" ];
+    };
+  };
+
   programs.cava-bg = {
     enable = true;
 
