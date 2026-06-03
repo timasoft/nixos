@@ -79,7 +79,6 @@ prefer-no-csd
 
 // ==================== ENVIRONMENT ====================
 environment {
-    LIBVA_DRIVER_NAME "nvidia"
     MOZ_ENABLE_WAYLAND "1"
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
 }
