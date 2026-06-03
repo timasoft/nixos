@@ -10,10 +10,6 @@ input {
         repeat-rate 25
     }
 
-    touchpad {
-        tap
-    }
-
     warp-mouse-to-focus
 
     focus-follows-mouse
