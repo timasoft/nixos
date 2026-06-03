@@ -7,7 +7,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    unstable.hyprland
     swaybg
     hyprshot
     zoxide
@@ -40,7 +39,6 @@
     neovim
     flatpak
     fishPlugins.tide
-    hyprland-qt-support
     hyprsysteminfo
     gpu-screen-recorder-gtk
     libqalculate
@@ -67,8 +65,6 @@
     monocraft
     nerd-fonts.symbols-only
   ];
-
-  programs.hyprland.enable = true;
 
   programs.firefox.enable = true;
 

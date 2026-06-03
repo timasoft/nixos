@@ -94,7 +94,6 @@
   environment.variables.EDITOR = "nvim";
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.sessionVariables.QML_IMPORT_PATH = "${pkgs.hyprland-qt-support}/lib/qt-6/qml";
 
   environment.sessionVariables = {
     XDG_SESSION_TYPE = "wayland";
@@ -111,11 +110,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  programs.hyprland ={
-    enable = true;
-    xwayland.enable = true;
-  };
 
   programs.firefox.enable = true;
 
