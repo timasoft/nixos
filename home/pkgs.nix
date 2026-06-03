@@ -9,7 +9,7 @@
     yandex-music
     telegram-desktop
     unstable.prismlauncher
-    unstable.discord
+    # unstable.discord
     unstable.vesktop
     # unstable.betterdiscordctl
     # nvtopPackages.nvidia
