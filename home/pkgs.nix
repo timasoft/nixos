@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, ambiwayPkg, cavaBgPkg, ... }:
+{ config, pkgs, unstable, ambiwayPkg, ... }:
 
 {
   home.packages = with pkgs; [
