@@ -70,7 +70,6 @@
       modules = [
         nixvim.homeModules.nixvim
         stylix.homeModules.stylix
-        cava-bg.homeManagerModules.cava-bg
         ./home.nix
       ];
     };
