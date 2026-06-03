@@ -1,3 +1,4 @@
 *.bak
 gptree_output.txt
 .gptree_config
+AGENTS.md
