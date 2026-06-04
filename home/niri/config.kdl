@@ -100,12 +100,6 @@ hotkey-overlay {
     skip-at-startup
 }
 
-// ==================== BLUR ====================
-blur {
-    passes 1
-    offset 3
-}
-
 // ==================== ANIMATIONS ====================
 animations {
     window-open {
@@ -144,64 +138,6 @@ animations {
         duration-ms 400
         curve "cubic-bezier" 0.175 0.885 0.5 1.2
     }
-}
-
-// ==================== WINDOW RULES ====================
-
-window-rule {
-    match is-focused=false
-    opacity 0.95
-}
-
-window-rule {
-    background-effect {
-        blur true
-        xray false
-    }
-    draw-border-with-background false
-    open-fullscreen false
-    popups {
-        opacity 0.75
-        background-effect {
-            blur true
-        }
-    }
-}
-
-window-rule {
-    geometry-corner-radius 10
-    clip-to-geometry true
-}
-
-window-rule {
-    match app-id=r#"^(discord|com\.discordapp\.Discord)$"# is-focused=true
-    opacity 0.95
-}
-window-rule {
-    match app-id=r#"^(discord|com\.discordapp\.Discord)$"# is-focused=false
-    opacity 0.9
-}
-window-rule {
-    match app-id=r#"^vesktop$"# is-focused=true
-    opacity 0.95
-}
-window-rule {
-    match app-id=r#"^vesktop$"# is-focused=false
-    opacity 0.9
-}
-
-window-rule {
-    match app-id=r#"^org\.pulseaudio\.pavucontrol$"#
-    open-floating true
-    default-floating-position x=2 y=3 relative-to="bottom-right"
-}
-window-rule {
-    match app-id=r#"^org\.pulseaudio\.pavucontrol$"# is-focused=true
-    opacity 0.75
-}
-window-rule {
-    match app-id=r#"^org\.pulseaudio\.pavucontrol$"# is-focused=false
-    opacity 0.71
 }
 
 // ==================== LAYER RULES ====================
