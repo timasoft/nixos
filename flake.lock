@@ -9,11 +9,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780844621,
-        "narHash": "sha256-ZMZTRnFd/EOWewYIGmpY+HGGll0HD/B1zv+/CgPJctQ=",
+        "lastModified": 1780861618,
+        "narHash": "sha256-8NoNCP1cR1OVitSVcCGJDL1zVnzOVUAo4/+LXZl4vHw=",
         "owner": "timasoft",
         "repo": "ambiway",
-        "rev": "7f9189cbcd380ecd380e07eed8b6f783222998cd",
+        "rev": "5ed059e72124930ec70f48021f0fa0fb791bf4c0",
         "type": "github"
       },
       "original": {
