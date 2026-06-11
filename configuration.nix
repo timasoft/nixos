@@ -84,7 +84,7 @@
     owner = "root";
     group = "root";
     capabilities = "cap_perfmon=ep";
-    source = "${pkgs.btop-cuda}/bin/btop";
+    source = "${pkgs.btop}/bin/btop";
   };
 
   # Configure keymap in X11

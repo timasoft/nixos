@@ -27,7 +27,7 @@
     fzf
     yazi
     mangohud
-    btop-cuda
+    btop
     killall
     pavucontrol
     fastfetch
