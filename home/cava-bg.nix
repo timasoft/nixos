@@ -11,7 +11,10 @@
   programs.cava-bg = {
     enable = true;
 
-    systemd.enable = true;
+    systemd = {
+      enable = true;
+      supervisor = true;
+    };
 
     settings = {
       general = {

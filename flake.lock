@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781012924,
-        "narHash": "sha256-WfGLEOgm3JjUt6LGmaeEfNB349k/lh2aYGyf0sDZuak=",
+        "lastModified": 1781155695,
+        "narHash": "sha256-Z01Brrekm2x9Pm3u6hRF1GNgkGaUb53guJmEDEBz15E=",
         "owner": "timasoft",
         "repo": "cava-bg",
-        "rev": "f1e1a328b074d8d25c860176c3b9bc526eed543e",
+        "rev": "ab9a4f7985ed578f11979ec812d8d5fbd80477a6",
         "type": "github"
       },
       "original": {
