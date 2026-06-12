@@ -148,6 +148,8 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
+  services.upower.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Open ports in the firewall.
