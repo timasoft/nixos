@@ -320,24 +320,6 @@
                     "usePadding": true
                 },
                 {
-                    "displayMode": "forceOpen",
-                    "iconColor": "none",
-                    "id": "KeyboardLayout",
-                    "showIcon": true,
-                    "textColor": "none"
-                },
-                {
-                    "blacklist": [
-                    ],
-                    "chevronColor": "none",
-                    "colorizeIcons": false,
-                    "drawerEnabled": false,
-                    "hidePassive": false,
-                    "id": "Tray",
-                    "pinned": [
-                    ]
-                },
-                {
                     "displayMode": "alwaysShow",
                     "iconColor": "none",
                     "id": "Network",
@@ -351,6 +333,24 @@
                     "id": "Battery",
                     "showNoctaliaPerformance": true,
                     "showPowerProfiles": false
+                },
+                {
+                    "blacklist": [
+                    ],
+                    "chevronColor": "none",
+                    "colorizeIcons": false,
+                    "drawerEnabled": false,
+                    "hidePassive": false,
+                    "id": "Tray",
+                    "pinned": [
+                    ]
+                },
+                {
+                    "displayMode": "forceOpen",
+                    "iconColor": "none",
+                    "id": "KeyboardLayout",
+                    "showIcon": true,
+                    "textColor": "none"
                 },
                 {
                     "hideWhenZero": false,
