@@ -15,6 +15,7 @@
       ./configuration/nh.nix
       ./configuration/syncthing.nix
       ./configuration/niri.nix
+      ./configuration/autotz.nix
     ];
 
   hardware.graphics = {
@@ -59,9 +60,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Asia/Omsk";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "ru_RU.UTF-8";
