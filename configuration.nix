@@ -144,7 +144,29 @@
   services.hardware.openrgb.enable = true;
   services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
 
-  services.llama-server.enable = true;
+  services.llama-server = {
+    enable = true;
+
+    models = {
+      qwen35 = {
+        modelPath = "/mnt/nvme/ggufs/Qwen3.5-4B-UD-Q6_K_XL.gguf";
+        mmprojPath = "/mnt/nvme/ggufs/mmproj-F16(qwen3.5).gguf";
+        port = 8088;
+        requiredVram = 8000;
+        ctxSize = 131072;
+        parallel = 2;
+        extraArgs = [ "--webui-mcp-proxy" "--reasoning auto" ];
+      };
+
+      granite = {
+        modelPath = "/mnt/nvme/ggufs/granite-4.1-3b-UD-Q8_K_XL.gguf";
+        port = 8012;
+        requiredVram = 6500;
+        ctxSize = 32768;
+        parallel = 4;
+      };
+    };
+  };
 
   services.unsloth-studio.enable = false;
 
