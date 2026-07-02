@@ -5,7 +5,7 @@
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "github:nix-community/nixvim/nixos-26.05";
-    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:nix-community/stylix/release-26.05";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     # dw-proton.url = "github:imaviso/dwproton-flake";
@@ -39,6 +39,7 @@
       config.allowUnfree = true;
       config.cudaSupport = true;
       config.cudaCapabilities = [ "8.9" ];
+      config.permittedInsecurePackages = [ "pnpm-10.29.2" ];
       overlays = [ pipx-fix-overlay ];
     };
     unstablePkgs = import nixpkgs-unstable {
@@ -46,6 +47,7 @@
       config.allowUnfree = true;
       config.cudaSupport = true;
       config.cudaCapabilities = [ "8.9" ];
+      config.permittedInsecurePackages = [ "pnpm-10.29.2" ];
       overlays = [ pipx-fix-overlay ];
     };
   in {
