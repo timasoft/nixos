@@ -3,7 +3,6 @@
 {
   programs.fish = {
     enable = true;
-    package = unstable.fish;
     shellInit = ''
       set -g fish_greeting ""
       pfetch

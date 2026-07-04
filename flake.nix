@@ -5,7 +5,7 @@
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "github:nix-community/nixvim/nixos-26.05";
-    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:nix-community/stylix/release-26.05";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     # dw-proton.url = "github:imaviso/dwproton-flake";
@@ -16,7 +16,6 @@
     mcp-secure-exec.url = "github:timasoft/mcp-secure-exec";
     mcp-secure-exec.inputs.nixpkgs.follows = "nixpkgs";
     comfy.url = "github:nixified-ai/flake";
-    comfy.inputs.nixpkgs.follows = "nixpkgs";
     ambiway.url = "github:timasoft/ambiway";
     ambiway.inputs.nixpkgs.follows = "nixpkgs";
     cava-bg.url = "github:timasoft/cava-bg";
@@ -46,6 +45,7 @@
       config.allowUnfree = true;
       config.cudaSupport = true;
       config.cudaCapabilities = [ "7.5" ];
+      config.permittedInsecurePackages = [ "pnpm-10.29.2" ];
       overlays = [ pipx-fix-overlay ];
     };
     pipx-fix-overlay = final: prev: {
@@ -58,12 +58,13 @@
       config.allowUnfree = true;
       config.cudaSupport = true;
       config.cudaCapabilities = [ "7.5" ];
+      config.permittedInsecurePackages = [ "pnpm-10.29.2" ];
       overlays = [
         llama-cpp.overlays.default
-        comfy.overlays.comfyui
       ];
     };
     ambiwayPkg = ambiway.packages.${system}.default;
+    comfyuiPackage = comfy.packages.${system}.comfyui-nvidia;
   in {
     nixosConfigurations.timofey = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -85,6 +86,7 @@
         comfy.nixosModules.comfyui
       ];
       specialArgs = {
+        inherit comfyuiPackage;
         unstable = unstablePkgs;
         stable = pkgs;
       };

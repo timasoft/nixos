@@ -78,7 +78,6 @@
 
   programs.fish = {
     enable = true;
-    package = unstable.fish;
   };
 
   programs.steam = {

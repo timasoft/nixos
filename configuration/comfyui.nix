@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, comfyuiPackage, ... }:
 
 let
   nvmeMount = lib.optional (config.fileSystems ? "/mnt/nvme") "mnt-nvme.mount";
@@ -8,6 +8,7 @@ in
     enable = true;
 
     acceleration = "cuda";
+    package = comfyuiPackage;
 
     port = 8188;
     host = "0.0.0.0";
