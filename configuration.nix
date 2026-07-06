@@ -171,7 +171,7 @@
 
       ornith = {
         modelPath = "/mnt/nvme/ggufs/ornith-1.0-9b-Q6_K.gguf";
-        port = 8080;
+        port = 8000;
         requiredVram = 9000;
         ctxSize = 131072;
         parallel = 1;
