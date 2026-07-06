@@ -155,7 +155,10 @@
         requiredVram = 8000;
         ctxSize = 131072;
         parallel = 2;
-        extraArgs = [ "--webui-mcp-proxy" "--reasoning auto" ];
+        extraArgs = [
+          "--webui-mcp-proxy"
+          "--reasoning auto"
+        ];
       };
 
       granite = {
@@ -164,6 +167,18 @@
         requiredVram = 6500;
         ctxSize = 32768;
         parallel = 4;
+      };
+
+      ornith = {
+        modelPath = "/mnt/nvme/ggufs/ornith-1.0-9b-Q6_K.gguf";
+        port = 8080;
+        requiredVram = 9000;
+        ctxSize = 131072;
+        parallel = 1;
+        extraArgs = [
+          "--webui-mcp-proxy"
+          "--reasoning auto"
+        ];
       };
     };
   };
