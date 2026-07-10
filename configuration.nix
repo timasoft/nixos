@@ -93,7 +93,7 @@
   users.users.tima = {
     isNormalUser = true;
     description = "timofey";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm" "dialout" ];
     packages = with pkgs; [];
     shell = "${pkgs.fish}/bin/fish";
   };
@@ -140,9 +140,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  services.hardware.openrgb.enable = true;
-  # services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
 
   services.llama-server = {
     enable = true;

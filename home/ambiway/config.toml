@@ -22,4 +22,7 @@ cams = [3]
 device_id = 0
 zone_id_list = [2]
 monitor_id_list = [0]
-delay_ms = 45
+delay_ms = 7
+
+[serial]
+port = "/dev/ttyACM0"
