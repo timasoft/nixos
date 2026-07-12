@@ -30,6 +30,7 @@
     killall
     pavucontrol
     fastfetch
+    unstable.fetch
     pfetch
     gsimplecal
     cliphist
