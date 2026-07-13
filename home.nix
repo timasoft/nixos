@@ -17,7 +17,6 @@
     ./home/ambiway.nix
     ./home/niri.nix
     ./home/wofi.nix
-    ./home/hyprlock.nix
     ./home/cava-bg.nix
     ./home/services.nix
   ];

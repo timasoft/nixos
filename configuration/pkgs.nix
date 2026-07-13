@@ -47,8 +47,6 @@
     gpu-screen-recorder-gtk
     libqalculate
     swappy
-    wofi-emoji
-    wofi-power-menu
     wget
     wf-recorder
     byedpi

@@ -253,12 +253,11 @@ recent-windows {
 binds {
     // ======== LAUNCH ========
     Mod+A hotkey-overlay-title="kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="wofi drun" { spawn "wofi" "--show" "drun"; }
+    Mod+D hotkey-overlay-title="Launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Mod+Shift+D hotkey-overlay-title="wofi run" { spawn "wofi" "--show" "run"; }
-    Mod+X hotkey-overlay-title="power menu" { spawn "wofi-power-menu"; }
-    Mod+period hotkey-overlay-title="emoji" { spawn "wofi-emoji"; }
+    Mod+X hotkey-overlay-title="Power menu" { spawn "noctalia" "msg" "panel-toggle" "launcher" "/session"; }
+    Mod+period hotkey-overlay-title="Emoji" { spawn "noctalia" "msg" "panel-toggle" "launcher" "/emo"; }
     Mod+C hotkey-overlay-title="calc" { spawn-sh "~/.config/niri/wofi-calc.sh"; }
-    Mod+N hotkey-overlay-title="noctalia" { spawn "noctalia-shell"; }
 
     // ======== CLIPBOARD ========
     Mod+V hotkey-overlay-title="Clipboard" { spawn-sh "cliphist list | wofi --dmenu --cache-file=/dev/null | cliphist decode | wl-copy"; }
@@ -284,10 +283,7 @@ binds {
     Mod+Q repeat=false { close-window; }
 
     // ======== LOCK ========
-    Mod+L hotkey-overlay-title="Lock" { spawn-sh "hyprlock & sleep 3 && niri msg action power-off-monitors"; }
-
-    // ======== KILL QUICKSHELL / SWAYNC ========
-    Mod+Shift+N hotkey-overlay-title="Kill quickshell and swaync" { spawn-sh "killall .quickshell-wra & killall .swaync-wrapped"; }
+    Mod+L hotkey-overlay-title="Lock" { spawn-sh "noctalia msg session lock & sleep 3 && niri msg action power-off-monitors"; }
 
     // ======== SYSTEM ========
     Mod+Shift+E { quit; }
@@ -305,14 +301,14 @@ binds {
     Mod+Shift+Comma { expel-window-from-column; }
 
     // ======== MEDIA KEYS ========
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute        allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86AudioPlay allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
-    XF86AudioPrev allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "previous"; }
-    XF86AudioNext allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "next"; }
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn "noctalia" "msg" "volume-up"   "5"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn "noctalia" "msg" "volume-down" "5"; }
+    XF86AudioMute         allow-when-locked=true { spawn "noctalia" "msg" "volume-mute"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia" "msg" "brightness-down" "current" "5"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "noctalia" "msg" "brightness-up"   "current" "5"; }
+    XF86AudioPlay         allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
+    XF86AudioPrev         allow-when-locked=true { spawn "noctalia" "msg" "media" "previous"; }
+    XF86AudioNext         allow-when-locked=true { spawn "noctalia" "msg" "media" "next"; }
 
     // ======== FOCUS NAVIGATION: arrows ========
     Mod+Left  { focus-column-left; }

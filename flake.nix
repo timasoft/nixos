@@ -20,6 +20,8 @@
     ambiway.inputs.nixpkgs.follows = "nixpkgs";
     cava-bg.url = "github:timasoft/cava-bg";
     cava-bg.inputs.nixpkgs.follows = "nixpkgs";
+    noctalia.url = "github:noctalia-dev/noctalia";
+    noctalia.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -36,6 +38,7 @@
     comfy,
     ambiway,
     cava-bg,
+    noctalia,
     ...
   }:
   let
@@ -64,6 +67,7 @@
       ];
     };
     ambiwayPkg = ambiway.packages.${system}.default;
+    noctaliaPkg = noctalia.packages.${system}.default;
     comfyuiPackage = comfy.packages.${system}.comfyui-nvidia;
   in {
     nixosConfigurations.timofey = nixpkgs.lib.nixosSystem {
@@ -96,11 +100,13 @@
       inherit pkgs;
       extraSpecialArgs = {
         inherit ambiwayPkg;
+        inherit noctaliaPkg;
         unstable = unstablePkgs;
       };
       modules = [
         nixvim.homeModules.nixvim
         stylix.homeModules.stylix
+        noctalia.homeModules.default
         cava-bg.homeManagerModules.cava-bg
         ./home.nix
       ];

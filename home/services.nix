@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, ambiwayPkg, ... }:
+{ config, pkgs, ambiwayPkg, ... }:
 
 {
   systemd.user.services = {
@@ -28,22 +28,6 @@
       };
       Service = {
         ExecStart = "${ambiwayPkg}/bin/ambiway";
-        Restart = "on-failure";
-        RestartSec = 5;
-      };
-      Install = {
-        WantedBy = [ "graphical-session.target" ];
-      };
-    };
-
-    noctalia = {
-      Unit = {
-        Description = "Noctalia Shell";
-        After = [ "graphical-session.target" ];
-        PartOf = [ "graphical-session.target" ];
-      };
-      Service = {
-        ExecStart = "${unstable.noctalia-shell}/bin/noctalia-shell";
         Restart = "on-failure";
         RestartSec = 5;
       };
