@@ -59,7 +59,7 @@
     unstable.hyprviz
     unstable.niri
     xwayland-satellite
-    jdk21
+    jdk25
     cava
     virt-manager
     unstable.llamaPackages.llama-cpp
