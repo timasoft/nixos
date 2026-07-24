@@ -48,7 +48,6 @@
       config.allowUnfree = true;
       config.cudaSupport = true;
       config.cudaCapabilities = [ "7.5" ];
-      config.permittedInsecurePackages = [ "pnpm-10.29.2" ];
       overlays = [ pipx-fix-overlay ];
     };
     pipx-fix-overlay = final: prev: {
@@ -61,7 +60,6 @@
       config.allowUnfree = true;
       config.cudaSupport = true;
       config.cudaCapabilities = [ "7.5" ];
-      config.permittedInsecurePackages = [ "pnpm-10.29.2" ];
       overlays = [
         llama-cpp.overlays.default
       ];
