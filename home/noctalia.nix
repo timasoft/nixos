@@ -108,6 +108,7 @@ in
               show_keyboard_layout = false;
               show_login_button = false;
               show_password_hint = true;
+              center_password_text = true;
             };
           };
           "lockscreen-login-box@DVI-D-1" = {
@@ -128,6 +129,7 @@ in
               show_keyboard_layout = false;
               show_login_button = false;
               show_password_hint = true;
+              center_password_text = true;
             };
           };
           "lockscreen-widget-0000000000000001" = {
