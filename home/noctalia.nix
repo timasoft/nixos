@@ -79,124 +79,110 @@ in
         widget_order = [
           "lockscreen-login-box@DVI-D-1"
           "lockscreen-login-box@DP-1"
-          "lockscreen-widget-0000000000000001"
-          "lockscreen-widget-0000000000000002"
-          "lockscreen-widget-0000000000000003"
-          "lockscreen-widget-0000000000000004"
+          "lockscreen-clock-time@DP-1"
+          "lockscreen-clock-time@DVI-D-1"
+          "lockscreen-clock-date@DP-1"
+          "lockscreen-clock-date@DVI-D-1"
         ];
         grid = {
           cell_size = 8;
           major_interval = 4;
           visible = true;
         };
-        widget = {
-          "lockscreen-login-box@DP-1" = {
-            box_height = 208.0;
-            box_width = 960.0;
-            cx = 1280.0;
-            cy = 720.0;
-            output = "DP-1";
-            rotation = 0.0;
-            type = "login_box";
-            settings = {
-              background_color = "surface_variant";
-              background_opacity = 0.0;
-              background_radius = 12.0;
-              center_password_text = true;
-              input_opacity = 0.7;
-              input_radius = 10.0;
-              layout = "regular";
-              show_caps_lock = true;
-              show_keyboard_layout = false;
-              show_login_button = false;
-              show_password_hint = true;
-              show_session_buttons = false;
-            };
+        widget = let
+          # Outputs and their scale factors relative to the 640x360 universal grid
+          outputs = {
+            "DP-1" = 4.0;    # 2560x1440
+            "DVI-D-1" = 3.0; # 1920x1080
           };
-          "lockscreen-login-box@DVI-D-1" = {
-            box_height = 156.0;
-            box_width = 720.0;
-            cx = 960.0;
-            cy = 540.0;
-            output = "DVI-D-1";
-            rotation = 0.0;
-            type = "login_box";
-            settings = {
-              background_color = "surface_variant";
-              background_opacity = 0.0;
-              background_radius = 12.0;
-              center_password_text = true;
-              input_opacity = 0.69;
-              input_radius = 10.0;
-              layout = "regular";
-              show_caps_lock = true;
-              show_keyboard_layout = false;
-              show_login_button = false;
-              show_password_hint = true;
-              show_session_buttons = false;
-            };
-          };
-          "lockscreen-widget-0000000000000001" = {
-            box_height = 96.0;
-            box_width = 368.0;
-            cx = 1280.0;
-            cy = 528.0;
-            output = "DP-1";
-            rotation = 0.0;
-            type = "clock";
-            settings = {
-              background_opacity = 0.0;
-              background_padding = 0;
-              background_radius = 0;
-              format = "{:%T}";
-            };
-          };
-          "lockscreen-widget-0000000000000002" = {
-            box_height = 72.0;
-            box_width = 276.0;
-            cx = 960.0;
-            cy = 396.0;
-            output = "DVI-D-1";
-            rotation = 0.0;
-            type = "clock";
-            settings = {
-              background_opacity = 0.0;
-              background_padding = 0;
-              background_radius = 0;
-              format = "{:%T}";
-            };
-          };
-          "lockscreen-widget-0000000000000004" = {
-            box_height = 96.0;
-            box_width = 436.0;
-            cx = 1280.0;
-            cy = 608.0;
-            output = "DP-1";
-            rotation = 0.0;
-            type = "clock";
-            settings = {
-              background_opacity = 0.0;
-              background_padding = 0;
-              background_radius = 0;
-              format = "{:%A %d %B}";
-            };
-          };
-          "lockscreen-widget-0000000000000003" = {
-            box_height = 72.0;
-            box_width = 327.0;
-            cx = 960.0;
-            cy = 456.0;
-            output = "DVI-D-1";
-            rotation = 0.0;
-            type = "clock";
-            settings = {
-              background_opacity = 0.0;
-              background_padding = 0;
-              background_radius = 0;
-              format = "{:%A %d %B}";
-            };
-          };
-        };
+
+          # Base widgets defined on the 640x360 grid
+          baseWidgets = [
+            {
+              id = "login-box";
+              type = "login_box";
+              box_height = 52.0;
+              box_width = 240.0;
+              cx = 320.0;
+              cy = 180.0;
+              settings = {
+                background_color = "surface_variant";
+                background_opacity = 0.0;
+                background_radius = 12.0;
+                center_password_text = true;
+                input_opacity = 0.7;
+                input_radius = 10.0;
+                layout = "regular";
+                show_caps_lock = true;
+                show_keyboard_layout = false;
+                show_login_button = false;
+                show_password_hint = true;
+                show_session_buttons = false;
+              };
+            }
+            {
+              id = "clock-time";
+              type = "clock";
+              box_height = 24.0;
+              box_width = 92.0;
+              cx = 320.0;
+              cy = 132.0;
+              settings = {
+                background_opacity = 0.0;
+                background_padding = 0;
+                background_radius = 0;
+                format = "{:%T}";
+              };
+            }
+            {
+              id = "clock-date";
+              type = "clock";
+              box_height = 24.0;
+              box_width = 109.0;
+              cx = 320.0;
+              cy = 152.0;
+              settings = {
+                background_opacity = 0.0;
+                background_padding = 0;
+                background_radius = 0;
+                format = "{:%A %d %B}";
+              };
+            }
+          ];
+
+          # Helper to scale spatial attributes (cx, cy, width, height)
+          scaleWidget = scale: widget:
+            let
+              scaleAttr = name: value:
+                if builtins.elem name [ "box_height" "box_width" "cx" "cy" ]
+                then value * scale
+                else value;
+            in builtins.mapAttrs scaleAttr widget;
+
+          # Generate final widgets for all outputs
+          mkWidgets = builtins.concatMap (outputName:
+            let
+              scale = outputs.${outputName};
+            in
+            map (base:
+              let
+                # Remove 'id' before scaling, as it's not a spatial attribute
+                spatial = builtins.removeAttrs base [ "id" ];
+                scaled = scaleWidget scale spatial;
+
+                finalName = "lockscreen-${base.id}@${outputName}";
+              in
+              {
+                name = finalName;
+                value = scaled // {
+                  output = outputName;
+                  rotation = 0.0;
+                };
+              }
+            ) baseWidgets
+          ) (builtins.attrNames outputs);
+
+        in builtins.listToAttrs mkWidgets;
       };
 
       notification = {
