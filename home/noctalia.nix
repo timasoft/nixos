@@ -91,8 +91,8 @@ in
         };
         widget = {
           "lockscreen-login-box@DP-1" = {
-            box_height = 70.0;
-            box_width = 400.0;
+            box_height = 208.0;
+            box_width = 960.0;
             cx = 1280.0;
             cy = 720.0;
             output = "DP-1";
@@ -102,18 +102,20 @@ in
               background_color = "surface_variant";
               background_opacity = 0.0;
               background_radius = 12.0;
+              center_password_text = true;
               input_opacity = 0.7;
               input_radius = 10.0;
+              layout = "regular";
               show_caps_lock = true;
               show_keyboard_layout = false;
               show_login_button = false;
               show_password_hint = true;
-              center_password_text = true;
+              show_session_buttons = false;
             };
           };
           "lockscreen-login-box@DVI-D-1" = {
-            box_height = 70.0;
-            box_width = 400.0;
+            box_height = 156.0;
+            box_width = 720.0;
             cx = 960.0;
             cy = 540.0;
             output = "DVI-D-1";
@@ -123,20 +125,22 @@ in
               background_color = "surface_variant";
               background_opacity = 0.0;
               background_radius = 12.0;
+              center_password_text = true;
               input_opacity = 0.69;
               input_radius = 10.0;
+              layout = "regular";
               show_caps_lock = true;
               show_keyboard_layout = false;
               show_login_button = false;
               show_password_hint = true;
-              center_password_text = true;
+              show_session_buttons = false;
             };
           };
           "lockscreen-widget-0000000000000001" = {
             box_height = 96.0;
             box_width = 368.0;
             cx = 1280.0;
-            cy = 560.0;
+            cy = 528.0;
             output = "DP-1";
             rotation = 0.0;
             type = "clock";
@@ -148,10 +152,10 @@ in
             };
           };
           "lockscreen-widget-0000000000000002" = {
-            box_height = 96.0;
-            box_width = 368.0;
+            box_height = 72.0;
+            box_width = 276.0;
             cx = 960.0;
-            cy = 380.0;
+            cy = 396.0;
             output = "DVI-D-1";
             rotation = 0.0;
             type = "clock";
@@ -162,12 +166,12 @@ in
               format = "{:%T}";
             };
           };
-          "lockscreen-widget-0000000000000003" = {
+          "lockscreen-widget-0000000000000004" = {
             box_height = 96.0;
-            box_width = 416.0;
-            cx = 960.0;
-            cy = 460.0;
-            output = "DVI-D-1";
+            box_width = 436.0;
+            cx = 1280.0;
+            cy = 608.0;
+            output = "DP-1";
             rotation = 0.0;
             type = "clock";
             settings = {
@@ -177,12 +181,12 @@ in
               format = "{:%A %d %B}";
             };
           };
-          "lockscreen-widget-0000000000000004" = {
-            box_height = 96.0;
-            box_width = 416.0;
-            cx = 1280.0;
-            cy = 640.0;
-            output = "DP-1";
+          "lockscreen-widget-0000000000000003" = {
+            box_height = 72.0;
+            box_width = 327.0;
+            cx = 960.0;
+            cy = 456.0;
+            output = "DVI-D-1";
             rotation = 0.0;
             type = "clock";
             settings = {
