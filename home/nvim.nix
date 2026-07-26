@@ -34,6 +34,7 @@
         bash
         nix
         lua
+        wgsl
       ];
     };
 
