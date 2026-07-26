@@ -185,6 +185,10 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="2e8a", MODE="0666", GROUP="dialout"
+  '';
+
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
 
