@@ -116,7 +116,6 @@ in
                 show_caps_lock = true;
                 show_keyboard_layout = false;
                 show_login_button = false;
-                show_password_hint = true;
                 show_session_buttons = false;
               };
             }
@@ -126,7 +125,7 @@ in
               box_height = 24.0;
               box_width = 92.0;
               cx = 320.0;
-              cy = 132.0;
+              cy = 120.0;
               settings = {
                 background_opacity = 0.0;
                 background_padding = 0;
@@ -140,7 +139,7 @@ in
               box_height = 24.0;
               box_width = 109.0;
               cx = 320.0;
-              cy = 152.0;
+              cy = 140.0;
               settings = {
                 background_opacity = 0.0;
                 background_padding = 0;
@@ -253,7 +252,7 @@ in
           vertical_format = "{:%d %m}";
         };
         cpu = {
-          display = "text";
+          visualization = "none";
         };
         media = {
           max_length = 256;
@@ -261,7 +260,7 @@ in
           title_scroll = "on_hover";
         };
         ram = {
-          display = "text";
+          visualization = "none";
         };
         workspaces = {
           font_weight = 900;
