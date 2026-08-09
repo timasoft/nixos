@@ -199,7 +199,7 @@ in
       };
 
       shell = {
-        avatar_path = "${toString ../assets/avatar.jpg}";
+        avatar_path = ../assets/avatar.jpg;
         clipboard_enabled = false;
         date_format = "%a, %x";
         font_family = "Monocraft";
