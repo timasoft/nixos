@@ -20,4 +20,14 @@
     ./home/cava-bg.nix
     ./home/services.nix
   ];
+
+  xdg.configFile."fontconfig/conf.d/99-monocraft.conf".text = ''
+    <fontconfig>
+      <selectfont>
+        <rejectfont>
+          <glob>*Monocraft-no-ligatures*</glob>
+        </rejectfont>
+      </selectfont>
+    </fontconfig>
+  '';
 }
