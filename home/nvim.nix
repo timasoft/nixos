@@ -184,6 +184,28 @@
       vim.keymap.set('n', '<leader>m', ':MinimapToggle<CR>', { noremap = true, silent = true })
       vim.cmd('highlight Normal guibg=#050010')
       vim.cmd('tnoremap <Esc> <C-\\><C-n>')
+
+      vim.api.nvim_create_user_command('Diff', function()
+        local b1, b2 = vim.api.nvim_create_buf(false, true), vim.api.nvim_create_buf(false, true)
+        for _, b in ipairs({b1, b2}) do
+          vim.api.nvim_set_option_value('buftype', 'nofile', { buf = b })
+          vim.api.nvim_set_option_value('bufhidden', 'wipe', { buf = b })
+          vim.api.nvim_set_option_value('swapfile', false, { buf = b })
+        end
+
+        vim.cmd('vsplit')
+        vim.api.nvim_win_set_buf(0, b2)
+        vim.cmd('wincmd l')
+        vim.api.nvim_win_set_buf(0, b1)
+
+        vim.cmd('diffthis | wincmd h | diffthis')
+
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+          vim.wo[win].wrap = true
+        end
+
+        vim.o.diffopt = "internal,filler,closeoff,algorithm:minimal,indent-heuristic,linematch:50"
+      end, { desc = "Open two scratch buffers for diffing" })
     '';
   };
   home.file.".config/nvim/coc-settings.json".text = ''
