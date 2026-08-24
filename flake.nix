@@ -22,6 +22,8 @@
     cava-bg.inputs.nixpkgs.follows = "nixpkgs";
     noctalia.url = "github:noctalia-dev/noctalia";
     noctalia.inputs.nixpkgs.follows = "nixpkgs";
+    zapret-rust.url = "github:timasoft/zapret-discord-youtube-rust";
+    zapret-rust.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -39,6 +41,7 @@
     ambiway,
     cava-bg,
     noctalia,
+    zapret-rust,
     ...
   }:
   let
@@ -86,6 +89,7 @@
         # }
         mcp-secure-exec.nixosModules.mcp-secure-exec
         comfy.nixosModules.comfyui
+        zapret-rust.nixosModules.zapret-rust
       ];
       specialArgs = {
         inherit comfyuiPackage;

@@ -24,7 +24,7 @@
       ./configuration/virtualization.nix
       ./configuration/syncthing.nix
       ./configuration/niri.nix
-      # ./zapret.nix
+      ./configuration/zapret.nix
     ];
 
   hardware.graphics = {
