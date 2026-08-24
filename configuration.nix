@@ -18,8 +18,6 @@
       ./configuration/plymouth.nix
       ./configuration/nh.nix
       ./configuration/llama-server.nix
-      ./configuration/mcp-secure-exec.nix
-      ./configuration/unsloth-studio.nix
       ./configuration/comfyui.nix
       ./configuration/virtualization.nix
       ./configuration/syncthing.nix
@@ -179,8 +177,6 @@
       };
     };
   };
-
-  services.unsloth-studio.enable = false;
 
   services.gvfs.enable = true;
   services.udisks2.enable = true;

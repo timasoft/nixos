@@ -13,8 +13,6 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     llama-cpp.url = "github:ggml-org/llama.cpp";
     llama-cpp.inputs.nixpkgs.follows = "nixpkgs";
-    mcp-secure-exec.url = "github:timasoft/mcp-secure-exec";
-    mcp-secure-exec.inputs.nixpkgs.follows = "nixpkgs";
     comfy.url = "github:nixified-ai/flake";
     ambiway.url = "github:timasoft/ambiway";
     ambiway.inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +34,6 @@
     # dw-proton,
     nix-index-database,
     llama-cpp,
-    mcp-secure-exec,
     comfy,
     ambiway,
     cava-bg,
@@ -87,7 +84,6 @@
         #     dw-proton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
         #   ];
         # }
-        mcp-secure-exec.nixosModules.mcp-secure-exec
         comfy.nixosModules.comfyui
         zapret-rust.nixosModules.zapret-rust
       ];
