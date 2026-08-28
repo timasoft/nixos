@@ -258,6 +258,7 @@ in
           max_length = 256;
           min_length = 256;
           title_scroll = "on_hover";
+          show_progress = true;
         };
         ram = {
           visualization = "none";

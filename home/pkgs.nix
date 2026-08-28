@@ -16,7 +16,7 @@
     libreoffice
     git-lfs
     gimp
-    kdePackages.kdenlive
+    # kdePackages.kdenlive
     tauon
     ambiwayPkg
   ];
