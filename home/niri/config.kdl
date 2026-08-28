@@ -9,7 +9,9 @@ input {
         repeat-delay 600
         repeat-rate 25
     }
-
+    tablet {
+        map-to-focused-output
+    }
     warp-mouse-to-focus
 
     focus-follows-mouse

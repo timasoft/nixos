@@ -739,6 +739,7 @@
         "nixvim": "nixvim",
         "noctalia": "noctalia",
         "stylix": "stylix",
+        "vinsa-tablet": "vinsa-tablet",
         "zapret-rust": "zapret-rust"
       }
     },
@@ -963,6 +964,22 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "base16-zed",
+        "type": "github"
+      }
+    },
+    "vinsa-tablet": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1760987326,
+        "narHash": "sha256-le9sCFbWZNmlAJqQhrxFAT2HqhkWgj1b1U8qbSW5aNY=",
+        "owner": "feveal",
+        "repo": "Tablet-VINSA-1060-Plus-Linux-Driver",
+        "rev": "aedea60d2ab4df2e4895346217f63a69cd8fdf7e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "feveal",
+        "repo": "Tablet-VINSA-1060-Plus-Linux-Driver",
         "type": "github"
       }
     },

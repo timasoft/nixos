@@ -23,6 +23,7 @@
       ./configuration/syncthing.nix
       ./configuration/niri.nix
       ./configuration/zapret.nix
+      ./configuration/vinsa-tablet.nix
     ];
 
   hardware.graphics = {
@@ -180,6 +181,8 @@
 
   services.gvfs.enable = true;
   services.udisks2.enable = true;
+
+  services.vinsa-tablet.enable = true;
 
   services.udev.extraRules = ''
     SUBSYSTEM=="tty", ATTRS{idVendor}=="2e8a", MODE="0666", GROUP="dialout"

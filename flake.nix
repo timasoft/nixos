@@ -22,6 +22,8 @@
     noctalia.inputs.nixpkgs.follows = "nixpkgs";
     zapret-rust.url = "github:timasoft/zapret-discord-youtube-rust";
     zapret-rust.inputs.nixpkgs.follows = "nixpkgs";
+    vinsa-tablet.url = "github:feveal/Tablet-VINSA-1060-Plus-Linux-Driver";
+    vinsa-tablet.flake = false;
   };
 
   outputs = {
@@ -39,6 +41,7 @@
     cava-bg,
     noctalia,
     zapret-rust,
+    vinsa-tablet,
     ...
   }:
   let
@@ -89,6 +92,7 @@
       ];
       specialArgs = {
         inherit comfyuiPackage;
+        inherit vinsa-tablet;
         unstable = unstablePkgs;
         stable = pkgs;
       };
