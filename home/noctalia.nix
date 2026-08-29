@@ -214,6 +214,9 @@ in
         shadow = {
           direction = "center";
         };
+        launcher = {
+          pinned = [ "firefox" "vesktop" "org.prismlauncher.PrismLauncher" "steam" ];
+        };
         launch_apps_as_systemd_services = true;
       };
 
