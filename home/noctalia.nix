@@ -1,13 +1,15 @@
-{ config, noctaliaPkg, ... }:
+{ config, unstable, ... }:
 
 let
   cfg = ./noctalia;
 in
 {
-  home.packages = [ noctaliaPkg ];
+  home.packages = [ unstable.noctalia ];
 
   programs.noctalia = {
     enable = true;
+
+    package = unstable.noctalia;
 
     systemd.enable = true;
 

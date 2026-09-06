@@ -4,8 +4,10 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager-master.url = "github:nix-community/home-manager/master";
+    home-manager-master.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nixvim.url = "github:nix-community/nixvim/nixos-26.05";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:nix-community/stylix/release-26.05";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     # dw-proton.url = "github:imaviso/dwproton-flake";
@@ -16,10 +18,8 @@
     comfy.url = "github:nixified-ai/flake";
     ambiway.url = "github:timasoft/ambiway";
     ambiway.inputs.nixpkgs.follows = "nixpkgs";
-    cava-bg.url = "github:timasoft/cava-bg";
+    cava-bg.url = "github:leriart/cava-bg";
     cava-bg.inputs.nixpkgs.follows = "nixpkgs";
-    noctalia.url = "github:noctalia-dev/noctalia";
-    noctalia.inputs.nixpkgs.follows = "nixpkgs";
     zapret-rust.url = "github:timasoft/zapret-discord-youtube-rust";
     zapret-rust.inputs.nixpkgs.follows = "nixpkgs";
     vinsa-tablet.url = "github:feveal/Tablet-VINSA-1060-Plus-Linux-Driver";
@@ -31,6 +31,7 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    home-manager-master,
     nixvim,
     stylix,
     # dw-proton,
@@ -39,7 +40,6 @@
     comfy,
     ambiway,
     cava-bg,
-    noctalia,
     zapret-rust,
     vinsa-tablet,
     ...
@@ -68,7 +68,6 @@
       ];
     };
     ambiwayPkg = ambiway.packages.${system}.default;
-    noctaliaPkg = noctalia.packages.${system}.default;
     comfyuiPackage = comfy.packages.${system}.comfyui-nvidia;
   in {
     nixosConfigurations.timofey = nixpkgs.lib.nixosSystem {
@@ -102,13 +101,13 @@
       inherit pkgs;
       extraSpecialArgs = {
         inherit ambiwayPkg;
-        inherit noctaliaPkg;
+        inherit nixvim;
         unstable = unstablePkgs;
       };
       modules = [
         nixvim.homeModules.nixvim
         stylix.homeModules.stylix
-        noctalia.homeModules.default
+        (home-manager-master + "/modules/programs/noctalia.nix")
         cava-bg.homeManagerModules.cava-bg
         ./home.nix
       ];
