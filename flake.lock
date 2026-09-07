@@ -1007,15 +1007,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1787506557,
-        "narHash": "sha256-Q4ecQnAaVsaKAQLwWYqlS9h5TfP/I2AKzkWY+6UclEc=",
-        "owner": "timasoft",
+        "lastModified": 1788763856,
+        "narHash": "sha256-CbtB0zEkFkkQIZ0lkSrVyvT/oBMPndU1pQlvFbSmE8c=",
+        "owner": "Sergeydigl3",
         "repo": "zapret-discord-youtube-rust",
-        "rev": "db8f02d5eb7c204c7b7bf8b32a2a878adf276a98",
+        "rev": "bde98cdb385f132aaf716dbddf0542ae059e917f",
         "type": "github"
       },
       "original": {
-        "owner": "timasoft",
+        "owner": "Sergeydigl3",
         "repo": "zapret-discord-youtube-rust",
         "type": "github"
       }

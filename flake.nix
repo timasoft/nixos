@@ -20,7 +20,7 @@
     ambiway.inputs.nixpkgs.follows = "nixpkgs";
     cava-bg.url = "github:leriart/cava-bg";
     cava-bg.inputs.nixpkgs.follows = "nixpkgs";
-    zapret-rust.url = "github:timasoft/zapret-discord-youtube-rust";
+    zapret-rust.url = "github:Sergeydigl3/zapret-discord-youtube-rust";
     zapret-rust.inputs.nixpkgs.follows = "nixpkgs";
     vinsa-tablet.url = "github:feveal/Tablet-VINSA-1060-Plus-Linux-Driver";
     vinsa-tablet.flake = false;
