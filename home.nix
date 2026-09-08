@@ -15,7 +15,6 @@
     ./home/noctalia.nix
     ./home/niri.nix
     ./home/wofi.nix
-    ./home/hyprlock.nix
     ./home/services.nix
   ];
 

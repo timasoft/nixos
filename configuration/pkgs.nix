@@ -8,7 +8,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     swaybg
-    hyprshot
+    # hyprshot
     zoxide
     vulkan-tools
     ly
@@ -40,7 +40,7 @@
     nftables
     neovim
     fishPlugins.tide
-    hyprsysteminfo
+    # hyprsysteminfo
     gpu-screen-recorder-gtk
     libqalculate
     swappy
@@ -53,7 +53,7 @@
     ripgrep
     nix-output-monitor
     nvd
-    hyprviz
+    # hyprviz
     unstable.niri
     xdg-desktop-portal-gnome
     xwayland-satellite

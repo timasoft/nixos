@@ -1,5 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, nixvim, ... }:
 
+let
+  nixvim-pkgs = nixvim.inputs.nixpkgs.legacyPackages.${pkgs.system};
+in
 {
   programs.nixvim = {
     enable = true;
@@ -20,7 +23,7 @@
         highlight.enable = true;
         indent.enable = true;
       };
-      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+      grammarPackages = with nixvim-pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
         rust
         python
         javascript
@@ -38,14 +41,14 @@
       ];
     };
 
-    extraPackages = with pkgs; [
+    extraPackages = with nixvim-pkgs; [
       nodejs
       yarn
       python3
       ripgrep
     ];
 
-    extraPlugins = with pkgs.vimPlugins; [
+    extraPlugins = with nixvim-pkgs.vimPlugins; [
       neo-tree-nvim
       lazygit-nvim
       telescope-nvim

@@ -4,8 +4,10 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager-master.url = "github:nix-community/home-manager/master";
+    home-manager-master.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nixvim.url = "github:nix-community/nixvim/nixos-26.05";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:nix-community/stylix/release-26.05";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database";
@@ -17,6 +19,7 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    home-manager-master,
     nixvim,
     stylix,
     nix-index-database,
@@ -61,11 +64,13 @@
     homeConfigurations.tima = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {
+        inherit nixvim;
         unstable = unstablePkgs;
       };
       modules = [
         nixvim.homeModules.nixvim
         stylix.homeModules.stylix
+        (home-manager-master + "/modules/programs/noctalia.nix")
         ./home.nix
       ];
     };
