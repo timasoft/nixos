@@ -15,7 +15,7 @@
     # nvtopPackages.nvidia
     libreoffice
     gimp
-    kdePackages.kdenlive
+    # kdePackages.kdenlive
     tauon
   ];
 

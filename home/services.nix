@@ -2,22 +2,6 @@
 
 {
   systemd.user.services = {
-    noctalia = {
-      Unit = {
-        Description = "Noctalia Shell";
-        After = [ "graphical-session.target" ];
-        PartOf = [ "graphical-session.target" ];
-      };
-      Service = {
-        ExecStart = "${unstable.noctalia-shell}/bin/noctalia-shell";
-        Restart = "on-failure";
-        RestartSec = 5;
-      };
-      Install = {
-        WantedBy = [ "graphical-session.target" ];
-      };
-    };
-
     cliphist-text = {
       Unit = {
         Description = "Cliphist Text Watcher";
