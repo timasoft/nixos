@@ -190,12 +190,11 @@ recent-windows {
 binds {
     // ======== LAUNCH ========
     Mod+A hotkey-overlay-title="kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="wofi drun" { spawn "wofi" "--show" "drun"; }
+    Mod+D hotkey-overlay-title="Launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Mod+Shift+D hotkey-overlay-title="wofi run" { spawn "wofi" "--show" "run"; }
-    Mod+X hotkey-overlay-title="power menu" { spawn "wofi-power-menu"; }
-    Mod+period hotkey-overlay-title="emoji" { spawn "wofi-emoji"; }
+    Mod+X hotkey-overlay-title="Power menu" { spawn "noctalia" "msg" "panel-toggle" "launcher" "/session"; }
+    Mod+period hotkey-overlay-title="Emoji" { spawn "noctalia" "msg" "panel-toggle" "launcher" "/emo"; }
     Mod+C hotkey-overlay-title="calc" { spawn-sh "~/.config/niri/wofi-calc.sh"; }
-    Mod+N hotkey-overlay-title="noctalia" { spawn "noctalia-shell"; }
 
     // ======== CLIPBOARD ========
     Mod+V hotkey-overlay-title="Clipboard" { spawn-sh "cliphist list | wofi --dmenu --cache-file=/dev/null | cliphist decode | wl-copy"; }
