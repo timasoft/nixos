@@ -96,7 +96,10 @@ in
         widget = let
           # Outputs and their scale factors relative to the 640x360 universal grid
           outputs = {
-            "eDP-1" = 3.0;    # 1920x1080
+            "eDP-1" = {
+              scale = 3.0;        # 1920x1080
+              outputScale = 1.25; # Wayland output scale
+            };
           };
 
           # Base widgets defined on the 640x360 grid
@@ -128,7 +131,7 @@ in
               box_height = 24.0;
               box_width = 92.0;
               cx = 320.0;
-              cy = 120.0;
+              cy = 95.0;
               settings = {
                 background_opacity = 0.0;
                 background_padding = 0;
@@ -142,7 +145,7 @@ in
               box_height = 24.0;
               box_width = 109.0;
               cx = 320.0;
-              cy = 140.0;
+              cy = 120.0;
               settings = {
                 background_opacity = 0.0;
                 background_padding = 0;
@@ -153,10 +156,12 @@ in
           ];
 
           # Helper to scale spatial attributes (cx, cy, width, height)
-          scaleWidget = scale: widget:
+          scaleWidget = scale: outputScale: widget:
             let
               scaleAttr = name: value:
-                if builtins.elem name [ "box_height" "box_width" "cx" "cy" ]
+                if builtins.elem name [ "cx" "cy" ]
+                then (value * scale) / outputScale
+                else if builtins.elem name [ "box_height" "box_width" ]
                 then value * scale
                 else value;
             in builtins.mapAttrs scaleAttr widget;
@@ -164,13 +169,15 @@ in
           # Generate final widgets for all outputs
           mkWidgets = builtins.concatMap (outputName:
             let
-              scale = outputs.${outputName};
+              outputCfg = outputs.${outputName};
+              scale = if builtins.isAttrs outputCfg then outputCfg.scale else outputCfg;
+              outputScale = if builtins.isAttrs outputCfg then outputCfg.outputScale else 1.0;
             in
             map (base:
               let
                 # Remove 'id' before scaling, as it's not a spatial attribute
                 spatial = builtins.removeAttrs base [ "id" ];
-                scaled = scaleWidget scale spatial;
+                scaled = scaleWidget scale outputScale spatial;
 
                 finalName = "lockscreen-${base.id}@${outputName}";
               in
