@@ -220,6 +220,26 @@
     priority = 100;
   };
 
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 8192;
+      priority = 0;
+    }
+  ];
+
+  boot.kernel.sysctl."vm.swappiness" = 10;
+
+  systemd.oomd = {
+    enable = true;
+    enableUserSlices = true;
+  };
+
+  systemd.slices."user".sliceConfig = {
+    ManagedOOMMemoryPressureLimit = "10%";
+    ManagedOOMMemoryPressureDurationSec = "5s";
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
