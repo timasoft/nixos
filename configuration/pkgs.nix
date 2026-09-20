@@ -59,6 +59,7 @@
     xdg-desktop-portal-gnome
     xwayland-satellite
     cava
+    delta
     unstable.opencode
   ];
 

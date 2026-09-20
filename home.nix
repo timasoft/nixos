@@ -18,6 +18,7 @@
     ./home/wofi.nix
     ./home/cava-bg.nix
     ./home/services.nix
+    ./home/delta.nix
   ];
 
   xdg.configFile."fontconfig/conf.d/99-monocraft.conf".text = ''
