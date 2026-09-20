@@ -62,6 +62,7 @@
     jdk25
     cava
     virt-manager
+    delta
     unstable.llamaPackages.llama-cpp
     unstable.opencode
   ];
