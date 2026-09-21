@@ -11,6 +11,4 @@
     libreoffice
     tauon
   ];
-
-  programs.lazygit.enable = true;
 }
