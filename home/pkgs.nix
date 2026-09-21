@@ -22,5 +22,4 @@
   ];
 
   programs.obs-studio.enable = true;
-  programs.lazygit.enable = true;
 }
