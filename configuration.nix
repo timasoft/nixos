@@ -165,8 +165,8 @@
         parallel = 4;
       };
 
-      ornith = {
-        modelPath = "/mnt/nvme/ggufs/ornith-1.0-9b-Q6_K.gguf";
+      bonsai2 = {
+        modelPath = "/mnt/nvme/ggufs/Ternary-Bonsai-2-27B-PTQ1_0.gguf";
         port = 8000;
         requiredVram = 9000;
         ctxSize = 131072;

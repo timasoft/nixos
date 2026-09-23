@@ -33,8 +33,8 @@ let
       --parallel ${toString modelCfg.parallel}
       --flash-attn on
       --sleep-idle-seconds 30
-      --cache-type-k q8_0
-      --cache-type-v q8_0
+      --cache-type-k q4_0
+      --cache-type-v q4_0
       ${lib.concatStringsSep "\n      " modelCfg.extraArgs}
     )
 
