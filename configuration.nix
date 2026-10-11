@@ -23,7 +23,6 @@
       ./configuration/syncthing.nix
       ./configuration/niri.nix
       ./configuration/zapret.nix
-      ./configuration/vinsa-tablet.nix
     ];
 
   hardware.graphics = {

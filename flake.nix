@@ -22,8 +22,7 @@
     cava-bg.inputs.nixpkgs.follows = "nixpkgs";
     zapret-rust.url = "github:Sergeydigl3/zapret-discord-youtube-rust";
     zapret-rust.inputs.nixpkgs.follows = "nixpkgs";
-    vinsa-tablet.url = "github:feveal/Tablet-VINSA-1060-Plus-Linux-Driver";
-    vinsa-tablet.flake = false;
+    vinsa-tablet.url = "github:timasoft/Tablet-VINSA-1060-Plus-Linux-Driver";
   };
 
   outputs = {
@@ -88,10 +87,10 @@
         # }
         comfy.nixosModules.comfyui
         zapret-rust.nixosModules.zapret-rust
+        vinsa-tablet.nixosModules.vinsa-tablet
       ];
       specialArgs = {
         inherit comfyuiPackage;
-        inherit vinsa-tablet;
         unstable = unstablePkgs;
         stable = pkgs;
       };
