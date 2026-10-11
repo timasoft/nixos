@@ -9,8 +9,8 @@
     yandex-music
     telegram-desktop
     unstable.prismlauncher
-    unstable.discord
-    unstable.vesktop
+    (unstable.discord.override { withVencord = true; })
+    # unstable.vesktop
     # unstable.betterdiscordctl
     nvtopPackages.nvidia
     libreoffice
