@@ -73,6 +73,8 @@ in
         blur_intensity = 0.1;
         blurred_desktop = true;
         tint_intensity = 0.2;
+        transition = [ "fade" ];
+        transition_duration = 100;
       };
 
       lockscreen_widgets = {
