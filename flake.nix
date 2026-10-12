@@ -106,7 +106,7 @@
       modules = [
         nixvim.homeModules.nixvim
         stylix.homeModules.stylix
-        (home-manager-master + "/modules/programs/noctalia.nix")
+        (home-manager-master + "/modules/programs/noctalia/default.nix")
         cava-bg.homeManagerModules.cava-bg
         ./home.nix
       ];

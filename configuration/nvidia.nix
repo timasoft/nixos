@@ -1,3 +1,5 @@
+{ unstable, ... }:
+
 {
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -8,5 +10,8 @@
     open = true;
     nvidiaSettings = true;
   };
-  hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia-container-toolkit = {
+    enable = true;
+    package = unstable.nvidia-container-toolkit;
+  };
 }
