@@ -82,11 +82,13 @@
       extraSpecialArgs = {
         inherit nixvim;
         unstable = unstablePkgs;
+        hmMaster = home-manager-master.outPath;
       };
       modules = [
         nixvim.homeModules.nixvim
         stylix.homeModules.stylix
         (home-manager-master + "/modules/programs/noctalia/default.nix")
+        ./home/herdr-master.nix
         cava-bg.homeManagerModules.cava-bg
         ./home.nix
       ];
