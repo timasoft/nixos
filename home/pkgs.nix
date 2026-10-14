@@ -10,5 +10,6 @@
     telegram-desktop
     libreoffice
     tauon
+    unstable.nautilus
   ];
 }
