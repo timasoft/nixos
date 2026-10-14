@@ -19,6 +19,7 @@
     # kdePackages.kdenlive
     tauon
     ambiwayPkg
+    unstable.nautilus
   ];
 
   programs.obs-studio.enable = true;
