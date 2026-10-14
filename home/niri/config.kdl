@@ -259,6 +259,7 @@ binds {
     Mod+X hotkey-overlay-title="Power menu" { spawn "noctalia" "msg" "panel-toggle" "launcher" "/session"; }
     Mod+period hotkey-overlay-title="Emoji" { spawn "noctalia" "msg" "panel-toggle" "launcher" "/emo"; }
     Mod+C hotkey-overlay-title="calc" { spawn-sh "~/.config/niri/wofi-calc.sh"; }
+    Mod+N hotkey-overlay-title="Nautilus" { spawn "nautilus"; }
 
     // ======== CLIPBOARD ========
     Mod+V hotkey-overlay-title="Clipboard" { spawn-sh "cliphist list | wofi --dmenu --cache-file=/dev/null | cliphist decode | wl-copy"; }

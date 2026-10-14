@@ -17,6 +17,7 @@
     gimp
     # kdePackages.kdenlive
     tauon
+    unstable.nautilus
   ];
 
   programs.obs-studio.enable = true;
