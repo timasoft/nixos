@@ -13,7 +13,7 @@
     # dw-proton.url = "github:imaviso/dwproton-flake";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-    cava-bg.url = "github:leriart/cava-bg";
+    cava-bg.url = "github:timasoft/cava-bg";
     cava-bg.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -86,7 +86,7 @@
       modules = [
         nixvim.homeModules.nixvim
         stylix.homeModules.stylix
-        (home-manager-master + "/modules/programs/noctalia.nix")
+        (home-manager-master + "/modules/programs/noctalia/default.nix")
         cava-bg.homeManagerModules.cava-bg
         ./home.nix
       ];
