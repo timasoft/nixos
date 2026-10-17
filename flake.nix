@@ -10,7 +10,7 @@
     # nixvim.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:nix-community/stylix/release-26.05";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
-    # dw-proton.url = "github:imaviso/dwproton-flake";
+    dw-proton.url = "github:imaviso/dwproton-flake";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     llama-cpp.url = "github:PrismML-Eng/llama.cpp";
@@ -33,7 +33,7 @@
     home-manager-master,
     nixvim,
     stylix,
-    # dw-proton,
+    dw-proton,
     nix-index-database,
     llama-cpp,
     comfy,
@@ -80,11 +80,11 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
         }
-        # {
-        #   programs.steam.extraCompatPackages = [
-        #     dw-proton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
-        #   ];
-        # }
+        {
+          programs.steam.extraCompatPackages = [
+            dw-proton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
+          ];
+        }
         comfy.nixosModules.comfyui
         zapret-rust.nixosModules.zapret-rust
         vinsa-tablet.nixosModules.vinsa-tablet
