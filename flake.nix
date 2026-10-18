@@ -18,7 +18,7 @@
     comfy.url = "github:nixified-ai/flake";
     ambiway.url = "github:timasoft/ambiway";
     ambiway.inputs.nixpkgs.follows = "nixpkgs";
-    cava-bg.url = "github:leriart/cava-bg";
+    cava-bg.url = "github:timasoft/cava-bg";
     cava-bg.inputs.nixpkgs.follows = "nixpkgs";
     zapret-rust.url = "github:Sergeydigl3/zapret-discord-youtube-rust";
     zapret-rust.inputs.nixpkgs.follows = "nixpkgs";
