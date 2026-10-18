@@ -220,7 +220,10 @@ in
           direction = "center";
         };
         launcher = {
+          category_icons_only = true;
           pinned = [ "firefox" "discord" "org.prismlauncher.PrismLauncher" "steam" ];
+          layout = "simple";
+
         };
         launch_apps_as_systemd_services = true;
       };
