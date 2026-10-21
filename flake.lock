@@ -537,15 +537,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1792168437,
-        "narHash": "sha256-6bIUB6CHjHYHQ8aSI+eeXyyRpKG/9hylGZDAXXAJxlI=",
+        "lastModified": 1791973589,
+        "narHash": "sha256-YEcikypXcESWLc0c3vD15FzjZx15tCHO4uo2onOvt0o=",
         "owner": "PrismML-Eng",
         "repo": "llama.cpp",
-        "rev": "0082ac24a89ae62132041b40e2c0170e278a98f4",
+        "rev": "fb24cf84975107c6cdb0ed1f071b0fd68bf6b6ec",
         "type": "github"
       },
       "original": {
         "owner": "PrismML-Eng",
+        "ref": "pull/361/head",
         "repo": "llama.cpp",
         "type": "github"
       }

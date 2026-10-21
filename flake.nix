@@ -13,7 +13,7 @@
     dw-proton.url = "github:imaviso/dwproton-flake";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-    llama-cpp.url = "github:PrismML-Eng/llama.cpp";
+    llama-cpp.url = "github:PrismML-Eng/llama.cpp/pull/361/head";
     llama-cpp.inputs.nixpkgs.follows = "nixpkgs";
     comfy.url = "github:nixified-ai/flake";
     ambiway.url = "github:timasoft/ambiway";
