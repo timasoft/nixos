@@ -18,6 +18,7 @@
     dust
     ncdu
     bat
+    bat-extras.core
     tokei
     git
     upower
