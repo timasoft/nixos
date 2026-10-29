@@ -111,7 +111,7 @@ in
               cx = 320.0;
               cy = 180.0;
               settings = {
-                background_color = "surface_variant";
+                background_color = "surface_container";
                 background_opacity = 0.0;
                 background_radius = 12.0;
                 center_password_text = true;
@@ -208,6 +208,7 @@ in
         clipboard_enabled = false;
         date_format = "%a, %x";
         font_family = "Monocraft";
+        niri_overview_close_on_launch_enabled = true;
         niri_overview_type_to_launch_enabled = true;
         polkit_agent = true;
         screen_time_enabled = true;
