@@ -17,6 +17,7 @@
       ./configuration/syncthing.nix
       ./configuration/niri.nix
       ./configuration/autotz.nix
+      ./configuration/vpn.nix
     ];
 
   hardware.graphics = {
