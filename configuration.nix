@@ -23,6 +23,7 @@
       ./configuration/syncthing.nix
       ./configuration/niri.nix
       ./configuration/zapret.nix
+      ./configuration/vpn.nix
     ];
 
   hardware.graphics = {

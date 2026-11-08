@@ -262,6 +262,9 @@ binds {
     Mod+C hotkey-overlay-title="calc" { spawn-sh "~/.config/niri/wofi-calc.sh"; }
     Mod+N hotkey-overlay-title="Nautilus" { spawn "nautilus"; }
 
+    // ======== VPN ========
+    Mod+P hotkey-overlay-title="Toggle VPN" { spawn "vpn-toggle"; }
+
     // ======== CLIPBOARD ========
     Mod+V hotkey-overlay-title="Clipboard" { spawn-sh "cliphist list | wofi --dmenu --cache-file=/dev/null | cliphist decode | wl-copy"; }
     Mod+Shift+V hotkey-overlay-title="Clipboard with swappy" { spawn-sh "cliphist list | wofi --dmenu --cache-file=/dev/null | cliphist decode | swappy -f -"; }
