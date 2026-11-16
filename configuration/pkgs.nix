@@ -51,7 +51,6 @@
     wget
     wf-recorder
     byedpi
-    marp-cli
     adwsteamgtk
     mpv
     ripgrep
@@ -60,7 +59,6 @@
     # unstable.hyprviz
     unstable.niri
     xwayland-satellite
-    jdk25
     cava
     virt-manager
     delta

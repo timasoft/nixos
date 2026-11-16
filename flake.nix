@@ -48,8 +48,6 @@
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
-      config.cudaSupport = true;
-      config.cudaCapabilities = [ "7.5" ];
       overlays = [ pipx-fix-overlay ];
     };
     pipx-fix-overlay = final: prev: {
