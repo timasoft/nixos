@@ -49,7 +49,6 @@
     wofi-power-menu
     wget
     byedpi
-    marp-cli
     mpv
     ripgrep
     nix-output-monitor
@@ -60,7 +59,7 @@
     xwayland-satellite
     cava
     delta
-    unstable.opencode
+    # unstable.opencode
   ];
 
   fonts.packages = with pkgs; [

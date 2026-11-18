@@ -15,9 +15,9 @@
     enable = true;
     settings = {
       git = {
-        pagers = [
+        diffRenderers = [
           {
-            pager = "delta --paging=never";
+            command = "delta --paging=never";
             colorArg = "always";
           }
         ];
