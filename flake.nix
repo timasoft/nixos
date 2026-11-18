@@ -40,8 +40,6 @@
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
-      config.cudaSupport = true;
-      config.cudaCapabilities = [ "8.9" ];
       config.permittedInsecurePackages = [ "pnpm-10.29.2" ];
       overlays = [ pipx-fix-overlay ];
     };

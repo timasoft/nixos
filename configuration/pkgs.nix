@@ -49,7 +49,6 @@
     wofi-power-menu
     wget
     byedpi
-    marp-cli
     adwsteamgtk
     mpv
     ripgrep
