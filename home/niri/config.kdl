@@ -290,9 +290,6 @@ binds {
     // ======== LOCK ========
     Mod+L hotkey-overlay-title="Lock" { spawn-sh "noctalia msg session lock & sleep 3 && niri msg action power-off-monitors"; }
 
-    // ======== KILL QUICKSHELL / SWAYNC ========
-    Mod+Shift+N hotkey-overlay-title="Kill quickshell and swaync" { spawn-sh "killall .quickshell-wra & killall .swaync-wrapped"; }
-
     // ======== SYSTEM ========
     Mod+Shift+E { quit; }
     Mod+Shift+S hotkey-overlay-title="Poweroff" { spawn "systemctl" "poweroff"; }
