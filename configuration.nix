@@ -18,6 +18,7 @@
       ./configuration/plymouth.nix
       ./configuration/nh.nix
       ./configuration/llama-server.nix
+      ./configuration/strata.nix
       ./configuration/comfyui.nix
       ./configuration/virtualization.nix
       ./configuration/syncthing.nix
@@ -154,6 +155,7 @@
         extraArgs = [
           "--webui-mcp-proxy"
           "--reasoning auto"
+          "--allow-unauthenticated-tools"
         ];
       };
 
@@ -164,18 +166,33 @@
         ctxSize = 32768;
         parallel = 4;
       };
+    };
+  };
 
-      bonsai2 = {
-        modelPath = "/mnt/nvme/ggufs/Ternary-Bonsai-2-27B-PTQ1_0.gguf";
-        port = 8000;
-        requiredVram = 9000;
-        ctxSize = 131072;
-        parallel = 1;
-        extraArgs = [
-          "--webui-mcp-proxy"
-          "--reasoning auto"
-        ];
-      };
+  services.strata = {
+    enable = true;
+
+    pack = "/mnt/nvme/strata/packs/unsloth-ud-iq1_m";
+    native = "/mnt/nvme/strata/models/unsloth-UD-IQ1_M/Qwen3.8-Flash-Next-UD-IQ1_M-00001-of-00003.gguf";
+    mmproj = "/mnt/nvme/strata/models/mmproj-Qwen3.8-Flash-Next-BF16.gguf";
+    modelName = "qwen3.8-flash-next-unsloth-ud-iq1_m";
+
+    engineArgs = [
+      "--expert-cache" "auto"
+      "--prefill" "auto"
+      "--spec" "4"
+      "--mtp" "/mnt/nvme/strata/mtp/rt"
+      "--max-context" "131072"
+      "--kv" "q4_0"
+      "--resident-budget-gib" "15"
+      "--vision"
+      "--pcie-frac" "0.75"
+      "--spec-min-p" "0.70"
+    ];
+
+    env = {
+      STRATA_HC_Q8 = "1";
+      STRATA_UNBUFFERED_LOAD = "1";
     };
   };
 

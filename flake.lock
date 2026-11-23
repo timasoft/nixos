@@ -552,15 +552,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1793990371,
-        "narHash": "sha256-eeuqIFBG3H2Y6DLwSkVA8ayRHJGmcFDXxGo/WA4RUto=",
-        "owner": "PrismML-Eng",
+        "lastModified": 1795420614,
+        "narHash": "sha256-GNdA6CFxrkFNSocjHhZT2ML53WkdvTSQBMieitPR1ts=",
+        "owner": "ggml-org",
         "repo": "llama.cpp",
-        "rev": "6447906bf96c1a023980d3453fb59daa6af3bb23",
+        "rev": "f5e6915c28f10330885fcb9243a93ae98d3115ab",
         "type": "github"
       },
       "original": {
-        "owner": "PrismML-Eng",
+        "owner": "ggml-org",
         "repo": "llama.cpp",
         "type": "github"
       }
@@ -895,6 +895,7 @@
         "nixpkgs": "nixpkgs_5",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
+        "strata": "strata",
         "stylix": "stylix",
         "vinsa-tablet": "vinsa-tablet",
         "zapret-rust": "zapret-rust"
@@ -965,6 +966,22 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "strata": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1795399949,
+        "narHash": "sha256-KjS5fqMyWwVX1DY2cnXooQhcixXIBJh8Z1HUvw6/E3g=",
+        "owner": "Niko1221",
+        "repo": "Strata",
+        "rev": "73d4f4196c25a65e02f6b9ef25d354826ce55105",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Niko1221",
+        "repo": "Strata",
         "type": "github"
       }
     },

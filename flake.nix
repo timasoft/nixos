@@ -13,7 +13,7 @@
     dw-proton.url = "github:imaviso/dwproton-flake";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-    llama-cpp.url = "github:PrismML-Eng/llama.cpp";
+    llama-cpp.url = "github:ggml-org/llama.cpp";
     llama-cpp.inputs.nixpkgs.follows = "nixpkgs";
     comfy.url = "github:nixified-ai/flake";
     ambiway.url = "github:timasoft/ambiway";
@@ -23,6 +23,9 @@
     zapret-rust.url = "github:Sergeydigl3/zapret-discord-youtube-rust";
     zapret-rust.inputs.nixpkgs.follows = "nixpkgs";
     vinsa-tablet.url = "github:timasoft/Tablet-VINSA-1060-Plus-Linux-Driver";
+    # The repo root has no flake.nix (only tools/nix/flake.nix, a dev shell), so it is a source input.
+    strata.url = "github:Niko1221/Strata";
+    strata.flake = false;
   };
 
   outputs = {
@@ -41,6 +44,7 @@
     cava-bg,
     zapret-rust,
     vinsa-tablet,
+    strata,
     ...
   }:
   let
@@ -55,6 +59,20 @@
         doCheck = false;
       });
     };
+    llama-cpp-fix-overlay = final: prev: {
+      llamaPackages = prev.llamaPackages // {
+        llama-cpp = prev.llamaPackages.llama-cpp.overrideAttrs (drv: {
+          cmakeFlags = drv.cmakeFlags ++ [ "-DCMAKE_CUDA_FLAGS=-I${prev.cudaPackages.cuda_nvml_dev.include}/include" ];
+          webui = drv.webui.overrideAttrs (webui: {
+            postPatch = ''
+              substituteInPlace scripts/brand-favicons.ts --replace-fail \
+                "copyFileSync(require.resolve(specifier), resolve(outDir, fileName));" \
+                "copyFileSync(require.resolve(specifier), resolve(outDir, fileName)); require('node:fs').chmodSync(resolve(outDir, fileName), 0o644);"
+            '';
+          });
+        });
+      };
+    };
     unstablePkgs = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
@@ -62,11 +80,20 @@
       config.cudaCapabilities = [ "7.5" ];
       overlays = [
         llama-cpp.overlays.default
+        llama-cpp-fix-overlay
       ];
     };
     ambiwayPkg = ambiway.packages.${system}.default;
     comfyuiPackage = comfy.packages.${system}.comfyui-nvidia;
+    # Built from the CUDA 13.0 set of the unstable channel: nvcc 13 wants that set's host compiler,
+    # and the package takes its stdenv from the cudaPkg it is given.
+    strataPkg = unstablePkgs.callPackage ./pkgs/strata.nix {
+      strataSrc = strata;
+      cudaPkg = unstablePkgs.cudaPackages_13_0;
+    };
   in {
+    packages."${system}".strata = strataPkg;
+
     nixosConfigurations.timofey = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
@@ -88,7 +115,7 @@
         vinsa-tablet.nixosModules.vinsa-tablet
       ];
       specialArgs = {
-        inherit comfyuiPackage;
+        inherit comfyuiPackage strataPkg;
         unstable = unstablePkgs;
         stable = pkgs;
       };
