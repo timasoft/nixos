@@ -64,6 +64,7 @@
     delta
     unstable.llamaPackages.llama-cpp
     unstable.opencode
+    systemctl-tui
   ];
 
   fonts.packages = with pkgs; [
