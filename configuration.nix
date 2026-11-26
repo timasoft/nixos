@@ -87,8 +87,9 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "ru";
-    variant = "";
+    layout = "us,ru";
+    variant = ", ";
+    options = "grp:alt_shift_toggle";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -132,6 +133,14 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
+
+  services.kmscon = {
+    enable = true;
+    useXkbConfig = true;
+    fonts = [
+      { name = "Monocraft"; package = pkgs.monocraft; }
+    ];
   };
 
   # services.hardware.openrgb.enable = true;
