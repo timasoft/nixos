@@ -972,11 +972,11 @@
     "strata": {
       "flake": false,
       "locked": {
-        "lastModified": 1795399949,
-        "narHash": "sha256-KjS5fqMyWwVX1DY2cnXooQhcixXIBJh8Z1HUvw6/E3g=",
+        "lastModified": 1795647581,
+        "narHash": "sha256-zciAZtzil3My4mkrwWmXf2KUXNJX9JK+luM3UYkVuHs=",
         "owner": "Niko1221",
         "repo": "Strata",
-        "rev": "73d4f4196c25a65e02f6b9ef25d354826ce55105",
+        "rev": "c234774038d1c9249cb33637d27b895d47b39786",
         "type": "github"
       },
       "original": {
